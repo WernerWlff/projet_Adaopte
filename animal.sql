@@ -24,7 +24,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
     "Lille",
     "59000",
     "Charlie est un petit chien calme et affectueux qui adore les balades tranquilles et les caresses sur le canapé.",
-    "/images/charlesdeluvio-K4mSJ7kc0As-unsplash.jpg"
+    "assets/images/charlesdeluvio-K4mSJ7kc0As-unsplash.jpg"
   ),
   (
     "Mia",
@@ -34,7 +34,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
     "Strasbourg",
     "67000",
     "Mia est une boule de tendresse curieuse et joueuse, toujours prête à ronronner près de vous.",
-    "/images/manja-vitolic-gKXKBY-C-Dk-unsplash.jpg"
+    "assets/images/manja-vitolic-gKXKBY-C-Dk-unsplash.jpg"
   ),
   (
     "Coco",
@@ -44,7 +44,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
     "Annecy",
     "74000",
     "Coco est un petit lapin plein d’énergie, très doux et parfait pour un foyer aimant et paisible.",
-    "/images/chan-swan-NKyl19P5IHg-unsplash.jpg"
+    "assets/images/chan-swan-NKyl19P5IHg-unsplash.jpg"
   ),
   (
     "Rex",
@@ -54,7 +54,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
     "Grenoble",
     "38000",
     "Rex est un chien loyal et majestueux, idéal pour une personne douce et patiente qui aime les câlins silencieux.",
-    "/images/alan-king-KZv7w34tluA-unsplash.jpg"
+    "assets/images/alan-king-KZv7w34tluA-unsplash.jpg"
   ),
   (
     "Luna",
@@ -64,7 +64,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
     "Bordeaux",
     "33000",
     "Luna adore les coins ensoleillés et les siestes à vos côtés. Elle vous offrira tout l’amour d’un regard félin.",
-    "/images/jae-park-7GX5aICb5i4-unsplash.jpg"
+    "assets/images/jae-park-7GX5aICb5i4-unsplash.jpg"
   ),
   (
     "Biscuit",
@@ -74,7 +74,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
     "Tours",
     "37000",
     "Biscuit est tout petit mais plein de vie ! Il aime les légumes croquants et les instants de douceur en famille.",
-    "/images/yosei-g-OVgE3m4MHKM-unsplash.jpg"
+    "assets/images/yosei-g-OVgE3m4MHKM-unsplash.jpg"
   ),
   (
     "Rio",
@@ -84,7 +84,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
     "Poitiers",
     "86000",
     "Rio est discret, mignon comme tout, et adore explorer les petits coins de la maison avec délicatesse.",
-    "/images/melanie-kreutz-IFnknR2Mv5o-unsplash.jpg"
+    "assets/images/melanie-kreutz-IFnknR2Mv5o-unsplash.jpg"
   ),
   (
     "Ruby",
@@ -94,5 +94,5 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
     "Chamonix",
     "74400",
     "Ruby est une boule de neige pleine d’amour ! Elle adore les promenades et les câlins par temps frais.",
-    "/images/peri-stojnic-5Vr_RVPfbMI-unsplash.jpg"
+    "assets/images/peri-stojnic-5Vr_RVPfbMI-unsplash.jpg"
   );
