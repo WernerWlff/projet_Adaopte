@@ -19,6 +19,36 @@
     "wdth" 100;
 }
 
+* {
+  font-family: "Roboto", sans-serif;
+}
+
 h1, h2, h3 {
   font-family: "Amatic SC", sans-serif;
+}
+
+#icons, #logo {
+  height: 1rem;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: #fffaf7;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  flex-direction: row;
+  gap: 1.563rem;
 }
