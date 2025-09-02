@@ -1,4 +1,4 @@
-import initSqlJs from "sql.js";
+
 
 initSqlJs({
     locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/${file}`
@@ -11,4 +11,4 @@ initSqlJs({
         const res = db.exec("SELECT * FROM animal;");
         console.log(res[0]);
       });
-  });
+  });   
