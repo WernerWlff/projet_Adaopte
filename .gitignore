@@ -4,6 +4,8 @@
 **/.DS_Store
 
 # ignore les fichiers nodes
-./assets/node_modules
-./assets/package-lock.json
-./assets/package.json
+/assets/node_modules
+
+#ignore les fichiers packages
+/assets/package-lock.json
+/assets/package.json
