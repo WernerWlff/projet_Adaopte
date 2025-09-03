@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
     <script defer src="./javascript/scriptDb.js"></script>
 </head>
@@ -39,7 +39,8 @@
 </select>
 <input type="text" placeholder="Votre ville">
 <button>Rechercher</button>
-<body>
+
+<body class="text-(--primary-color) Roboto">
     <section id="text-area">
         <h2>Nos animaux à adopter</h2>
         <p>Découvrez en images tous nos animaux qui attendent une famille aimante. Chaque photo raconte une histoire et un espoir.</p>
@@ -83,31 +84,36 @@
         <button>Devenir bénévole</button>
     </section>
 </body>
-<footer>
-    <ul>
-        <li><h3>Adaopte</h3></li>
+<footer class="bg-(--dark-color)">
+    <div class="grid grid-cols-[repeat(3,1fr)] grid-rows-[repeat(0,1fr)] gap-y-[10px] gap-x-[10px]">
+
+        <div><h4 class="text-2xl text-(--secondary-color) Amatic">Adaopte</h4>
             <p>Notre mission est de trouver des foyers aimants pour chaque animal abandonné et de promouvoir le bien-être animal.</p>
-            <div id="socials-links">
+            <div id="socials-links" class="grid grid-cols-[repeat(4,1fr)] gap-x-0 justify-items-center">
                 <img src="assets/socials_links_logo/facebook.svg" alt="Facebook">
                 <img src="assets/socials_links_logo/instagram.svg" alt="Instagram">
                 <img src="assets/socials_links_logo/linkedin.svg" alt="LinkedIn">
                 <img src="assets/socials_links_logo/twitch.svg" alt="Twitch">
             </div>
-        <li><h3>Informations utiles</h3></li>
-            <p>FAQs</p>
-            <p>Conseils d'adoption</p>
-            <p>Nous contacter</p>
-            <p>Mentions légales</p>
-        <li><h3>Contact</h3></li>
-            <p>116 Rue du Faubourg Saint-Martin
-                75010 Paris, France
-                Email: contact@adaopte.fr
-                Tél: +33 1 23 45 67 89
-            </p>
-    </ul>
+        </div>
+
+        <div><h3 class="text-2xl text-(--secondary-color) Amatic">Informations utiles</h3>
+            <p class="text-sm">FAQs</p>
+            <p class="text-sm">Conseils d'adoption</p>
+            <p class="text-sm">Nous contacter</p>
+            <p class="text-sm">Mentions légales</p>
+        </div>
+
+        <div><h3 class="text-2xl text-(--secondary-color) Amatic">Contact</h3>
+            <p>116 Rue du Faubourg Saint-Martin</p>
+            <p>75010 Paris, France</p>
+            <p>Email: contact@adaopte.fr</p>
+            <p>Tél: +33 1 23 45 67 89</p>
+        </div>
+    </div>
+
     <hr>
-    <p>© 2025 Adaopte. Tous droits réservés.
-        Ce site a été développé dans le cadre d'un projet pour ADA Tech School.
-    </p>
+    <p class="text-center">© 2025 Adaopte. Tous droits réservés.</p>
+    <p class="text-center">Ce site a été développé dans le cadre d'un projet pour ADA Tech School.</p>
 </footer>
 </html>
