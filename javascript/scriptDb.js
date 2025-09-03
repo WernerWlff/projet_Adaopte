@@ -23,16 +23,17 @@ initSqlJs({
         // console.log(res[0].values[1]) // affiche le deuxième élément du tableau
         
         // méthode pour récupérer les informations individuelles ( car c'est un objet donc il faut le décomposer pour pouvoir sortir ses infos)
-        // const value = res[0].values[0]
-        // console.log(typeof(value))
-        // console.log(value[0])
-        // console.log(value[1])
-        // console.log(value[2])
-        // console.log(value[3])
-        // console.log(value[4])
-        // console.log(value[5])
-        // console.log(value[6])
-        // console.log(value[7])
+        const value = res[0].values[0]
+        console.log(typeof(value))
+        console.log(value[0])
+        console.log(value[1])
+        console.log(value[2])
+        console.log(value[3])
+        console.log(value[4])
+        console.log(value[5])
+        console.log(value[6])
+        console.log(value[7])
+        console.log(value[8])
 
         // permet de parcourir la base de donnée avec une limite --> peut être intéressant à faire avec notre limite de 8 cartes par page
         // for(i = 0; i < 8; i++){
@@ -41,63 +42,68 @@ initSqlJs({
         //   console.log(testValue[2])
         // }
 
-        // for(let i = 0; i < 8; i++){
+        // changer toutes les valeurs qui permettent de faire un id ou une classe
+        // on peut sans doute changer par textContent --> on change des paragraphes donc pas très intéressant de faire des ids
 
-        //   // l'espace qui va contenir chacune de nos cartes
-        //   const container = document.createElement("div");
-        //   container.className = 'card';
-        //   container.setAttribute("id", Object.values(res[0].values[i].id))
+        for(let i = 0; i < 8; i++){
+        const value = res[0].values[i]
+        console.log(value)
+        
+          // l'espace qui va contenir chacune de nos cartes
+          const container = document.createElement("div");
+          container.className = 'card';
+          container.setAttribute("id", value[0])
           
-        //   // l'espace qui va permettre d'encapsuler notre image ( évite les problème si elle n'ont pas les mêmes résolutions)
-        //   const cardImage = document.createElement('div');
-        //   cardImage.className = "cardImage"
+          // l'espace qui va permettre d'encapsuler notre image ( évite les problème si elle n'ont pas les mêmes résolutions)
+          const cardImage = document.createElement('div');
+          cardImage.className = "cardImage"
 
-        //   // l'image
-        //   const img = document.createElement("img")
-        //   img.src = db.exec(`SELECT imageUrl FROM animal WHERE name=${Object.values(res[0].values[i].name)}`)
-        //   img.alt = `${Object.values(res[0].values[i].name)}_${Object.values(res[0].values[i].name)}`
-        //   img.className = 'animalPhoto'
+          // l'image
+          const img = document.createElement("img")
+          img.src = db.exec(value[8])
+          img.alt = `${value[1]}_${value[4]}`
+          img.className = 'animalPhoto'
 
-        //   cardImage.appendChild(img);
+          cardImage.appendChild(img);
 
-        //   // le type
-        //   const cardType = document.createElement("p")
-        //   cardType.className = "animalType"
-        //   cardType.textContent = Object.values(res[0].values[i].type)
+          // le type
+          const cardType = document.createElement("p")
+          cardType.className = "animalType"
+          cardType.textContent = value[4]
 
-        //   // le nom
-        //   const cardName = document.createElement("p")
-        //   cardName.className = "animalName"
-        //   cardName.textContent = Object.values(res[0].values[i].name)
+          // le nom
+          const cardName = document.createElement("p")
+          cardName.className = "animalName"
+          cardName.textContent = value[1]
 
-        //   // l'age et la race
-        //   const cardAgeAndBreed = document.createElement("p")
-        //   cardAgeAndBreed.className = "animalAgeAndBreed"
-        //   cardAgeAndBreed.textContent = `${Object.values(res[0].values[i].age)} · ${Object.values(res[0].values[i].breed)}`
+          // l'age et la race
+          const cardAgeAndBreed = document.createElement("p")
+          cardAgeAndBreed.className = "animalAgeAndBreed"
+          cardAgeAndBreed.textContent = `${value[2]} · ${value[3]}`
 
-        //   // La ville et le code Postal
-        //   const cardLocalisation = document.createElement("p")
-        //   cardLocalisation.className = 'animalLocalisation'
-        //   cardLocalisation.textContent = `${Object.values(res[0].values[i].city)}, ${Object.values(res[0].values[i].zipcode)}`
+          // La ville et le code Postal
+          const cardLocalisation = document.createElement("p")
+          cardLocalisation.className = 'animalLocalisation'
+          cardLocalisation.textContent = `${value[5]}, ${value[6]}`
 
-        //   // La description
-        //   const cardDescription = document.createElement("p")
-        //   cardDescription.className = 'animalDescription'
-        //   cardDescription.textContent = Object.values(res[0].values[i].description)
+          // La description
+          const cardDescription = document.createElement("p")
+          cardDescription.className = 'animalDescription'
+          cardDescription.textContent = value[7]
 
-        //   // le bouton
-        //   const meetUpButton = document.createElement("button")
-        //   meetUpButton.className = 'meetUpButton'
-        //   meetUpButton.textContent = "Rencontrer"
+          // le bouton
+          const meetUpButton = document.createElement("button")
+          meetUpButton.className = 'meetUpButton'
+          meetUpButton.textContent = "Rencontrer"
 
 
-        //   // permet d'allouer nos nouvelles divisions et paragraphes a notre div container
-        //   container.appendChild(cardType)
-        //   container.appendChild(cardName)
-        //   container.appendChild(cardAgeAndBreed)
-        //   container.appendChild(cardLocalisation)
-        //   container.appendChild(cardDescription)
-        //   container.appendChild(meetUpButton)
-        // }
+          // permet d'allouer nos nouvelles divisions et paragraphes a notre div container
+          container.appendChild(cardType)
+          container.appendChild(cardName)
+          container.appendChild(cardAgeAndBreed)
+          container.appendChild(cardLocalisation)
+          container.appendChild(cardDescription)
+          container.appendChild(meetUpButton)
+        }
       });
   }); 
