@@ -1,4 +1,15 @@
 const testDb = document.getElementById("test_db"); // Prends le premier élément
+const researchAnimalSelection = document.getElementById('researchAnimalSelection') // <select>
+const researchInput = document.getElementById('researchInput') // input
+const researchButton = document.getElementById("researchButton"); // <button>
+
+
+
+//addEventListener --> on va faire nos recherches avec ça
+researchButton.addEventListener("click", () => {
+
+const selectValue = researchAnimalSelection.value // on récupère le texte de notre sélecteur de type
+const inputValue = researchInput.value // on récupère le texte de notre input ( la ville )
 
 initSqlJs({
   locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/${file}`
@@ -71,3 +82,4 @@ initSqlJs({
 .catch(error => {
   console.error("Erreur lors de l'initialisation de SQL.js :", error);
 });
+})
