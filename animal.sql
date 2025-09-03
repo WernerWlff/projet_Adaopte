@@ -1,6 +1,9 @@
 #sqlite
+
+--@block
 DROP TABLE IF EXISTS animal;
 
+--@block
 CREATE TABLE animal (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
@@ -13,7 +16,7 @@ CREATE TABLE animal (
   imageUrl TEXT NOT NULL
 );
 
-
+--@block
 INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl) VALUES
 
   ( "Charlie",
@@ -23,7 +26,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
     "Lille",
     "59000",
     "Charlie est un petit chien calme et affectueux qui adore les balades tranquilles et les caresses sur le canapé.",
-    "assets/images/charlesdeluvio-K4mSJ7kc0As-unsplash.jpg"
+    "/assets/images/charlesdeluvio-K4mSJ7kc0As-unsplash.jpg"
   ),
   (
     "Mia",
@@ -33,7 +36,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
     "Strasbourg",
     "67000",
     "Mia est une boule de tendresse curieuse et joueuse, toujours prête à ronronner près de vous.",
-    "assets/images/manja-vitolic-gKXKBY-C-Dk-unsplash.jpg"
+    "/assets/images/manja-vitolic-gKXKBY-C-Dk-unsplash.jpg"
   ),
   (
     "Coco",
