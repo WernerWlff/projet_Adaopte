@@ -55,9 +55,9 @@ nav ul {
 }
 
 .container {
-  max-width: 90vw;
-  width: 100%;
-  padding: 3.5rem;
+  width: 90%;
+  margin: 0 auto; 
+  padding: 2rem 2rem;
 }
 
 #animals-grid {
@@ -65,9 +65,10 @@ nav ul {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-auto-rows: 0.625rem;
-  gap: 0.938rem;
+  gap: 1.5rem;
+  width: 100%;
   aspect-ratio: 1;
-  margin-bottom: 1.875rem;
+  margin: 2rem 0;
 }
 
 .grid-item {
@@ -88,12 +89,12 @@ nav ul {
   justify-content: center;
   width: 100%;
   height: 100%;
-  object-fit:fill;
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
 .grid-item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 
 .grid-item:nth-child(1) {
@@ -157,11 +158,37 @@ nav ul {
   box-shadow: 0 0.313rem 0.938rem rgba(0, 0, 0, 0.2);
 }
 
+@media (min-width: 1200px) {
+  .container {
+    padding: 3rem 3rem;
+  }
+  
+  #animals-grid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    padding: 1.5rem 1rem;
+  }
+  
+  #animals-grid {
+    gap: 0.8rem;
+  }
+}
+
 @media (max-width: 768px) {
+  .container {
+    padding: 1rem 0.75rem;
+  }
+
   #animals-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    gap: 0.625rem;
+    gap: 0.75rem;
+    width: 100%;
+    margin: 1.5rem auto;
   }
 
   .grid-item:nth-child(1) {
@@ -202,5 +229,25 @@ nav ul {
   .grid-item:nth-child(8) {
     grid-column: 2;
     grid-row: 6;
+  }
+
+  .grid-item:hover img {
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.75rem 0.5rem;
+  }
+
+  #animals-grid {
+    gap: 0.5rem;
+    margin: 1rem auto;
+  }
+
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
   }
 }
