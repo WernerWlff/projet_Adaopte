@@ -9,7 +9,10 @@ const researchButton = document.getElementById("researchButton"); // <button>
 researchButton.addEventListener("click", () => {
 
 const selectValue = researchAnimalSelection.value // on récupère le texte de notre sélecteur de type
-const inputValue = researchInput.value // on récupère le texte de notre input ( la ville )
+let inputValue = researchInput.value // on récupère le texte de notre input ( la ville )
+let res // vite pour l'instant mais on va potentiellement changer son contenu avec nos if et else if
+
+inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase() // permet de formater correctement pour la recherche DB
 
 initSqlJs({
   locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/${file}`
@@ -18,10 +21,42 @@ initSqlJs({
     .then(res => res.arrayBuffer())
     .then(buf => {
       const db = new SQL.Database(new Uint8Array(buf));
-      const res = db.exec("SELECT * FROM animal;");
 
-      for(let i = 0; i < 8; i++) {
-        const value = res[0].values[i];
+      // type et city demandés
+      if(selectValue !== "" && inputValue !== 'Tout'){
+        res = db.exec(`SELECT * FROM animal WHERE type=${selectValue} AND city=${inputValue};`);
+        creationCards(res);
+      }
+
+      //type demandé et pas city
+      else if(selectValue !=='' && inputValue === 'Tout'){
+        res = db.exec(`SELECT * FROM animal WHERE type=${selectValue};`);
+        creationCards(res);
+      }
+
+      //city demandé et pas type
+      else if(selectValue !=='' && inputValue === 'Tout'){
+        res = db.exec(`SELECT * FROM animal WHERE city=${inputValue};`);
+        creationCards(res);
+      }
+
+
+      // type et city non demandé 
+      else{
+        res = db.exec("SELECT * FROM animal;");
+        creationCards(res);
+      }
+    })
+})
+.catch(error => {
+  console.error("Erreur lors de l'initialisation de SQL.js :", error);
+});
+})
+
+//fonction qu'on va réutiliser pour transformer notre base de donnée en code
+function creationCards(database){
+        for(let i = 0; i < 8; i++) {
+        const value = database[0].values[i];
 
         // Création de la carte
         const container = document.createElement("div");
@@ -74,12 +109,4 @@ initSqlJs({
         container.appendChild(meetUpButton);
         testDb.appendChild(container);
       }
-    })
-    .catch(error => {
-      console.error("Erreur lors de la récupération de la base de données :", error);
-    });
-})
-.catch(error => {
-  console.error("Erreur lors de l'initialisation de SQL.js :", error);
-});
-})
+}
