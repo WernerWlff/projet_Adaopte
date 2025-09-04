@@ -65,7 +65,7 @@ function creationCards(database){
 
         // Création de la carte
         const container = document.createElement("div");
-        container.className = 'card';
+        container.className = 'card flex space-x- gap-y-[10px] gap-x-[10px] text-center basis-1/4';
         container.setAttribute("id", `${value[0]}`);
 
         // Image
