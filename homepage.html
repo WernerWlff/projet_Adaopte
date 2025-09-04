@@ -26,8 +26,8 @@
         <button>Faire un don</button>
     </nav>
 </header>
-<section>
-    <h1>Donnons-leur autant qu'ils nous apportent</h1>
+<section class="m-(--section-margin)">
+    <h1 class="text-[3rem] text-(--primary-color) Amatic">Donnons-leur autant qu'ils nous apportent</h1>
     <p>Chaque jour, des milliers d'animaux attendent une famille aimante.
     Trouvez votre compagnon idéal parmi nos animaux disponibles à l'adoption.</p>
 </section>
@@ -41,8 +41,8 @@
 <button>Rechercher</button>
 
 <body>
-    <section id="text-area">
-        <h2>Nos animaux à adopter</h2>
+    <section id="text-area" class="m-(--section-margin)">
+        <h2 class="text-[3rem] Amatic">Nos animaux à adopter</h2>
         <p>Découvrez en images tous nos animaux qui attendent une famille aimante. Chaque photo raconte une histoire et un espoir.</p>
         <div class="container">
             <div id="animals-grid">
@@ -61,31 +61,38 @@
         </div>
     </section>
 
-    <section>
-        <h2>Comment ça marche</h2>
-        <p>Adopter un animal est un engagement sérieux et à long terme. Voici notre processus d'adoption en quelques étapes simples.</p>
-        <div id="working-flex">
-            <ol>
-                <li>Trouver votre compagnon</li>
+    <section class="m-(--section-margin)">
+        <h2 class="text-[3rem] Amatic">Comment ça marche ?</h2>
+        <p class="text-center text-(--dark-color) text-sm m-4">Adopter un animal est un engagement sérieux et à long terme. Voici notre processus d'adoption en quelques étapes simples.</p>
+        <div id="working-flex" class="flex space-x- gap-y-[10px] gap-x-[10px] text-center">
+            <div class="border-none rounded-(--border-radius) w-120 h-60 shadow-(--shadow-xl) m-4">
+                <p class="text-2xl m-2">1. Trouver votre compagnon</p>
                 <p>Parcourez notre base de données d'animaux disponibles et utilisez nos filtres pour trouver celui qui correspond à votre mode de vie.</p>
-                <li>Remplissez une demande</li>
+            </div>
+            <div class="border-none rounded-(--border-radius) w-120 h-60 shadow-(--shadow-xl) m-4">
+                <p class="text-2xl m-2">2. Remplissez une demande</p>
                 <p>Soumettez votre formulaire d'adoption pour l'animal qui vous intéresse. Nous examinons chaque demande avec soin.</p>
-                <li>Rencontrez l'animal</li>
+            </div>
+            <div class="border-none rounded-(--border-radius) w-120 h-60 shadow-(--shadow-xl) m-4">
+                <p class="text-2xl m-2">3. Rencontrez l'animal</p>
                 <p>Visitez le refuge pour rencontrer l'animal et voir si vous êtes compatibles. C'est une étape essentielle du processus.</p>
-                <li>Bienvenue à la maison</li>
+            </div>
+            <div class="border-none rounded-(--border-radius) w-120 h-60 shadow-(--shadow-xl) m-4">
+                <p class="text-2xl m-2">4. Bienvenue à la maison</p>
                 <p>Une fois votre demande approuvée, vous pouvez accueillir votre nouvel ami chez vous. Nous restons disponibles pour vous conseiller.</p>
-            </ol>
+            </div>
         </div>
     </section>
 
-    <section>
-        <h2>Prêt⸱e à changer une vie ?</h2>
-        <p>Adoptez, partagez, soutenez... Chaque geste compte. Que vous ouvriez votre foyer ou votre coeur, vous pouvez offrir une seconde chance à un animal abandonné.</p>
-        <button>Adopter un animal</button>
-        <button>Faire un don</button>
-        <button>Devenir bénévole</button>
+    <section class="m-(--section-margin)">
+        <div class="bg-(--light-color)">
+            <h2 class="text-[3rem]  Amatic">Prêt⸱e à changer une vie ?</h2>
+            <p class="text-center">Adoptez, partagez, soutenez... Chaque geste compte. Que vous ouvriez votre foyer ou votre coeur, vous pouvez offrir une seconde chance à un animal abandonné.</p>
+            <button class="text-(--primary-color) rounded-x1(--border-radius) bg-(--btn-primary-bg)">Adopter un animal</button>
+            <button class="text-(--primary-color) bg-(--btn-secondary-bg)">Faire un don</button>
+            <button class="text-(--primary-color) bg-(--btn-accent-bg)">Devenir bénévole</button>
+        </div>
     </section>
-
 </body>
 <footer class="bg-(--dark-color) text-(--primary-color) Roboto">
     <div class="grid grid-cols-[repeat(3,1fr)] grid-rows-[repeat(0,1fr)] gap-y-[10px] gap-x-[10px]">
