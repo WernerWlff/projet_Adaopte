@@ -1,4 +1,5 @@
 #sqlite
+--@block
 DROP TABLE IF EXISTS volunteer;
 DROP TABLE IF EXISTS adoption_form;
 DROP TABLE IF EXISTS volunteer_form;
@@ -6,6 +7,7 @@ DROP TABLE IF EXISTS shelter;
 DROP TABLE IF EXISTS person;
 DROP TABLE IF EXISTS animal;
 
+--@block
 CREATE TABLE animal (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name TEXT NOT NULL,
@@ -66,6 +68,7 @@ CREATE TABLE volunteer (
   FOREIGN KEY (shelter_id) REFERENCES shelter(id) ON DELETE CASCADE
 );
 
+--@block
 INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl) VALUES
 
 (
