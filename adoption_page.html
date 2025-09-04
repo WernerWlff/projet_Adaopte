@@ -13,8 +13,8 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
     <script defer src="./javascript/scriptDb.js"></script>
 </head>
-<body>
-    <header>
+
+<header>
     <nav>
         <div id="logo"><img src="assets/favicon/favicon-32x32.png">Adaopte</div>
         <ul>
@@ -27,6 +27,19 @@
     </nav>
 </header>
 
+<body>
+
+<section>
+<select id="researchAnimalSelection">
+    <option value ="Tout">Tout</option>
+    <option value="Chien">Chien</option>
+    <option value="Chat">Chat</option>
+    <option value="Lapin">Lapin</option>
+    <option value="Rongeur">Rongeur</option>
+</select>
+<input id="researchInput" type="text" placeholder="Votre ville">
+<button id="researchButton">Rechercher</button> <!-- bouton pour faire des recherches -->
+</section>
 
 <div>
     <div id="test_db"></div>

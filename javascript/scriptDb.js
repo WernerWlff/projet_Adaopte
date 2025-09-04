@@ -7,11 +7,15 @@ const researchButton = document.getElementById("researchButton"); // <button>
 
 //addEventListener --> on va faire nos recherches avec ça
 researchButton.addEventListener("click", () => {
-  const selectValue = researchAnimalSelection.value // on récupère le texte de notre sélecteur de type
+  let selectValue = researchAnimalSelection.value // on récupère le texte de notre sélecteur de type
   let inputValue = researchInput.value // on récupère le texte de notre input ( la ville )
   let res // vite pour l'instant mais on va potentiellement changer son contenu avec nos if et else if
 
   inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase() // permet de formater correctement pour la recherche DB
+
+  console.log("on veut trouver un animal qui est un : " + selectValue)
+  console.log("on cherche un animal présent dans la ville de : " + inputValue)
+  
 
   initSqlJs({
     locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/${file}`
@@ -22,28 +26,40 @@ researchButton.addEventListener("click", () => {
         const db = new SQL.Database(new Uint8Array(buf));
 
         // type et city demandés
-        if(selectValue !== "" && inputValue !== 'Tout'){
-          res = db.exec(`SELECT * FROM animal WHERE type=${selectValue} AND city=${inputValue};`);
-          creationCards(res);
+        if(selectValue !== "Tout" && inputValue !== ''){
+          res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}' AND city='${inputValue}';`);
+
+          console.log(`SELECT * FROM animal WHERE type='${selectValue}' AND city='${inputValue}';`)
+          console.log(res);
+          // console.log(creationCards(res));
         }
 
         //type demandé et pas city
-        else if(selectValue !=='' && inputValue === 'Tout'){
-          res = db.exec(`SELECT * FROM animal WHERE type=${selectValue};`);
-          creationCards(res);
+        else if(selectValue !=='Tout' && inputValue === ''){
+          res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}';`);
+
+          console.log(`SELECT * FROM animal WHERE type='${selectValue}';`);
+          console.log(res);
+          // console.log(creationCards(res));
         }
 
-        //city demandé et pas type
-        else if(selectValue !=='' && inputValue === 'Tout'){
-          res = db.exec(`SELECT * FROM animal WHERE city=${inputValue};`);
-          creationCards(res);
+        //type non demandé et city demandée
+        else if(selectValue ==='Tout' && inputValue !== ''){
+          res = db.exec(`SELECT * FROM animal WHERE city='${inputValue}';`);
+
+          console.log(`SELECT * FROM animal WHERE city='${inputValue}';`);
+          console.log(res);
+          // console.log(creationCards(res));
         }
 
 
         // type et city non demandé 
         else{
           res = db.exec("SELECT * FROM animal;");
-          creationCards(res);
+
+          console.log(`SELECT * FROM animal;`);
+          console.log(res);
+          // console.log(creationCards(res));
         }
       })
       .catch(error => {
