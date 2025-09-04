@@ -1,22 +1,15 @@
-const testDb = document.getElementById("test_db"); // Prends le premier élément
-const researchAnimalSelection = document.getElementById('researchAnimalSelection') // <select>
-const researchInput = document.getElementById('researchInput') // input
-const researchButton = document.getElementById("researchButton"); // <button>
+const testDb = document.getElementById("test_db");
+const researchAnimalSelection = document.getElementById('researchAnimalSelection');
+const researchInput = document.getElementById('researchInput');
+const researchButton = document.getElementById("researchButton");
 
-
-
-//addEventListener --> on va faire nos recherches avec ça
 researchButton.addEventListener("click", () => {
-  let selectValue = researchAnimalSelection.value // on récupère le texte de notre sélecteur de type
-  let inputValue = researchInput.value // on récupère le texte de notre input ( la ville )
-  let res // vite pour l'instant mais on va potentiellement changer son contenu avec nos if et else if
+  let selectValue = researchAnimalSelection.value;
+  let inputValue = researchInput.value;
+  let res;
 
-  inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase() // permet de formater correctement pour la recherche DB
-
-  console.log("on veut trouver un animal qui est un : " + selectValue)
-  console.log("on cherche un animal présent dans la ville de : " + inputValue)
+  inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase();
   
-
   initSqlJs({
     locateFile: file => `https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/${file}`
   }).then(SQL => {
@@ -28,38 +21,30 @@ researchButton.addEventListener("click", () => {
         // type et city demandés
         if(selectValue !== "Tout" && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}' AND city='${inputValue}';`);
-
-          console.log(`SELECT * FROM animal WHERE type='${selectValue}' AND city='${inputValue}';`)
-          console.log(res);
-          // console.log(creationCards(res));
+          console.log(res[0].values.length)
+          creationCards(res);
         }
 
         //type demandé et pas city
         else if(selectValue !=='Tout' && inputValue === ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}';`);
-
-          console.log(`SELECT * FROM animal WHERE type='${selectValue}';`);
-          console.log(res);
-          // console.log(creationCards(res));
+          console.log(res[0].values.length)
+          creationCards(res);
         }
 
         //type non demandé et city demandée
         else if(selectValue ==='Tout' && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE city='${inputValue}';`);
-
-          console.log(`SELECT * FROM animal WHERE city='${inputValue}';`);
-          console.log(res);
-          // console.log(creationCards(res));
+          console.log(res[0].values.length)
+          creationCards(res);
         }
 
 
         // type et city non demandé 
         else{
           res = db.exec("SELECT * FROM animal;");
-
-          console.log(`SELECT * FROM animal;`);
-          console.log(res);
-          // console.log(creationCards(res));
+          console.log(res[0].values.length)
+          creationCards(res);
         }
       })
       .catch(error => {
@@ -72,15 +57,16 @@ researchButton.addEventListener("click", () => {
 });
 
 
-//fonction qu'on va réutiliser pour transformer notre base de donnée en code
 function creationCards(database){
-        for(let i = 0; i < 8; i++) {
+        for(let i = 0; i < Math.max(database[0].values.length, 8); i++) {
         const value = database[0].values[i];
+
+        console.log(typeof(value[0]))
 
         // Création de la carte
         const container = document.createElement("div");
         container.className = 'card';
-        container.setAttribute("id", value[0]);
+        container.setAttribute("id", `${value[0]}`);
 
         // Image
         const cardImage = document.createElement('div');
