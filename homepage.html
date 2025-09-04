@@ -31,16 +31,18 @@
     <p class="text-center">Chaque jour, des milliers d'animaux attendent une famille aimante.
     Trouvez votre compagnon idéal parmi nos animaux disponibles à l'adoption.</p>
 </section>
-<div class="text-center border ml-80 h-20 w-200">
-    <span>Type d'animal</span>
-        <select class="border shadow-(--shadow-sm) w-60 rounded-sm">
+<div class="text-center border-none shadow-(--shadow-lg) rounded-(--border-radius) ml-80 h-20 w-200">
+    <label for="options">Type d'animal
+        <select id="options" class="border shadow-(--shadow-sm) w-60 rounded-sm">
             <option value="Chien">Chien</option>
             <option value="Chat">Chat</option>
             <option value="Lapin">Lapin</option>
             <option value="Rongeur">Rongeur</option>
         </select>
-    <span>Localisation</span>
-        <input type="text" placeholder="Votre ville" class="border shadow-(--shadow-sm) w-50 rounded-sm">
+    </label>
+    <label for="city">Localisation
+        <input id="city" type="text" placeholder="Votre ville" class="border shadow-(--shadow-sm) w-50 rounded-sm">
+    </label>
     <button class="bg-(--dark-color) text-(--primary-color) w-40 h-10 border rounded-full text-center">Rechercher 🔎</button>
 </div>
 <body>
