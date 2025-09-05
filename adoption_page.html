@@ -16,17 +16,17 @@
 </head>
 <body>
     <header>
-    <nav>
-        <div id="logo"><img src="assets/favicon/favicon-32x32.png">Adaopte</div>
-        <ul>
-            <li><img src="assets/navbar_icons/house.svg" id="icons"><a href="homepage.html"> Accueil</a></li>
-            <li><img src="assets/navbar_icons/bone.svg" id="icons"><a href="adoption_page.html"> J'adopte</a></li>
-            <li><img src="assets/navbar_icons/fish.svg" id="icons"> Guide de l'adoption</li>
-            <li><img src="assets/navbar_icons/squirrel.svg" id="icons"> Devenir Bénévole</li>
-        </ul>
-        <button>Faire un don</button>
-    </nav>
-</header>
+        <nav>
+            <div id="logo"><img src="assets/favicon/favicon-32x32.png">Adaopte</div>
+            <ul>
+                <li><img src="assets/navbar_icons/house.svg" id="icons"><a href="homepage.html"> Accueil</a></li>
+                <li><img src="assets/navbar_icons/bone.svg" id="icons"><a href="adoption_page.html"> J'adopte</a></li>
+                <li><img src="assets/navbar_icons/fish.svg" id="icons"> Guide de l'adoption</li>
+                <li><img src="assets/navbar_icons/squirrel.svg" id="icons"> Devenir Bénévole</li>
+            </ul>
+            <button>Faire un don</button>
+        </nav>
+    </header>
 <div class="border-none shadow-lg rounded-lg mx-90 my-8 w-[800px] p-8" style="box-shadow: var(--shadow-lg); border-radius: var(--border-radius)">
     <div class="grid grid-cols-3 gap-4 mb-2">
         <label for="options" class="block ml-5">Type d'animal</label>
@@ -42,38 +42,55 @@
             <option value="Rongeur">Rongeur</option>
         </select>
         <input id="city" type="text" placeholder="   Votre ville" class="border shadow-(--shadow-sm) w-60 rounded-sm">
-        <button class="w-50 h-10 border rounded-full text-center" style="background: var(--dark-color); color: var(--primary-color)">Rechercher 🔎</button>
+        <button class="w-50 h-10 border rounded-full text-center" style="background: var(--dark-color); color: var(--primary-color)"><strong>Rechercher 🔎</strong></button>
     </div>
 </div>
 <div>
     <div id="test_db"></div>
 </div>
-</body>
-<footer>
-    <ul>
-        <li><h3>Adaopte</h3></li>
-            <p>Notre mission est de trouver des foyers aimants pour chaque animal abandonné et de promouvoir le bien-être animal.</p>
-            <div id="socials-links">
-                <img src="assets/socials_links_logo/facebook.svg" alt="Facebook">
-                <img src="assets/socials_links_logo/instagram.svg" alt="Instagram">
-                <img src="assets/socials_links_logo/linkedin.svg" alt="LinkedIn">
-                <img src="assets/socials_links_logo/twitch.svg" alt="Twitch">
+
+    <footer class="bg-(--dark-color) text-(--primary-color) Roboto p-4">
+        <div class="grid grid-cols-[repeat(3,1fr)] grid-rows-[repeat(0,1fr)] gap-y-[10px] gap-x-[10px]">
+
+            <div class="justify-items-start ml-8">
+                <h4 class="text-2xl text-(--secondary-color) Amatic mb-2">Adaopte</h4>
+                <p class="text-[10px] mb-2">Notre mission est de trouver des foyers aimants pour chaque animal abandonné et de promouvoir le bien-être animal.</p>
+            <div id="socials-links" class="grid grid-cols-[repeat(4,1fr)] gap-x-4">
+                <div class="flex items-center justify-center w-9 h-9 rounded-full bg-neutral-700 ">
+                    <img src="assets/socials_links_logo/facebook.svg" alt="Facebook" class="w-5 h-5">
+                </div>
+                <div class="flex items-center justify-center w-9 h-9 rounded-full bg-neutral-700">
+                    <img src="assets/socials_links_logo/instagram.svg" alt="Instagram" class="w-5 h-5">
+                </div>
+                <div class="flex items-center justify-center w-9 h-9 rounded-full bg-neutral-700">
+                    <img src="assets/socials_links_logo/linkedin.svg" alt="LinkedIn" class="w-5 h-5">
+                </div>
+                <div class="flex items-center justify-center w-9 h-9 rounded-full bg-neutral-700">
+                    <img src="assets/socials_links_logo/twitch.svg" alt="Twitch" class="w-5 h-5">
+                </div>
             </div>
-        <li><h3>Informations utiles</h3></li>
-            <p>FAQs</p>
-            <p>Conseils d'adoption</p>
-            <p>Nous contacter</p>
-            <p>Mentions légales</p>
-        <li><h3>Contact</h3></li>
-            <p>116 Rue du Faubourg Saint-Martin
-                75010 Paris, France
-                Email: contact@adaopte.fr
-                Tél: +33 1 23 45 67 89
-            </p>
-    </ul>
-    <hr>
-    <p>© 2025 Adaopte. Tous droits réservés.
-        Ce site a été développé dans le cadre d'un projet pour ADA Tech School.
-    </p>
-</footer>
+        </div>
+
+            <div class="justify-items-start ml-8">
+                <h3 class="text-2xl text-(--secondary-color) Amatic">Informations utiles</h3>
+                <p class="text-[10px] text-neutral-400 pb-2">FAQs</p>
+                <p class="text-[10px] text-neutral-400 pb-2">Conseils d'adoption</p>
+                <p class="text-[10px] text-neutral-400 pb-2">Nous contacter</p>
+                <p class="text-[10px] text-neutral-400">Mentions légales</p>
+            </div>
+
+            <div class="justify-items-start ml-8">
+                <h3 class="text-2xl text-(--secondary-color) Amatic">Contact</h3>
+                <p class="text-[10px]">116 Rue du Faubourg Saint-Martin</p>
+                <p class="text-[10px]">75010 Paris, France</p>
+                <p class="text-[10px]">Email: contact@adaopte.fr</p>
+                <p class="text-[10px]">Tél: +33 1 23 45 67 89</p>
+            </div>
+        </div>
+
+        <hr class="text-neutral-600 mt-4 mb-4">
+        <p class="text-center text-neutral-500 text-[12px]">© 2025 Adaopte. Tous droits réservés.</p>
+        <p class="text-center text-neutral-500 text-[12px]">Ce site a été développé dans le cadre d'un projet pour ADA Tech School.</p>
+    </footer>
+</body>
 </html>
