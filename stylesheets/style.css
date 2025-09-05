@@ -23,6 +23,14 @@
   font-family: "Roboto", sans-serif;
 }
 
+a.skiplink {
+   position: absolute;
+   left: -99999px;
+}
+a.skiplink:focus {
+   position: static;
+}
+
 h1, h2, h3 {
   font-family: "Amatic SC", sans-serif;
   text-align: center;
@@ -52,6 +60,16 @@ nav ul {
   list-style: none;
   flex-direction: row;
   gap: 1.563rem;
+}
+
+.hero {
+  background-image: url("../assets/images/background.jpg"); 
+  background-size: cover;   
+  background-position: center; 
+  background-repeat: no-repeat;
+  color: white; 
+  text-align: center;
+  padding: 100px 20px; 
 }
 
 .container {
