@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
+    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
     <script defer src="./javascript/scriptDb.js"></script>
 </head>
@@ -40,6 +41,148 @@
 <input id="researchInput" type="text" placeholder="Votre ville">
 <button id="researchButton">Rechercher</button> <!-- bouton pour faire des recherches -->
 </section>
+
+<!--Tests pour la création de cartes-->
+<section class="flex flex-wrap -mx-3 p-6 bg-gray-100">
+
+  <!-- Carte 1 -->
+  <div class="w-full sm:w-1/2 md:w-1/4 px-3 mb-6">
+    <div class="rounded-2xl overflow-hidden shadow-lg bg-white">
+      <img class="w-full h-48 object-cover" src="/assets/images/charlesdeluvio-K4mSJ7kc0As-unsplash.jpg" alt="Animal 1">
+      <div class="p-4">
+        <p class="text-sm text-gray-500">Chien</p>
+        <p class="text-sm text-gray-500">Charlie</p>
+        <p class="text-gray-700">Pug • 5 ans</p>
+        <p class="text-gray-500 text-sm mt-1">Lille 59000</p>
+        <p class="text-gray-700 text-sm mt-2">Charlie est un petit chien calme et affectueux qui adore les balades tranquilles et les caresses sur le canapé.</p>
+        <button class="mt-4 w-full bg-gray-900 text-white font-medium py-2 px-4 rounded-xl hover:bg-gray-800 transition">
+          Rencontrer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carte 2 -->
+  <div class="w-full sm:w-1/2 md:w-1/4 px-3 mb-6">
+    <div class="rounded-2xl overflow-hidden shadow-lg bg-white">
+      <img class="w-full h-48 object-cover" src="/assets/images/manja-vitolic-gKXKBY-C-Dk-unsplash.jpg" alt="Animal 2">
+      <div class="p-4">
+        <p class="text-sm text-gray-500">Chat</p>
+        <p class="text-sm text-gray-500">Mia</p>
+        <p class="text-gray-700">Chat noir et blanc • 2 ans</p>
+        <p class="text-gray-500 text-sm mt-1">Strasbourg 67000</p>
+        <p class="text-gray-700 text-sm mt-2">Mia est une boule de tendresse curieuse et joueuse, toujours prête à ronronner près de vous.</p>
+        <button class="mt-4 w-full bg-gray-900 text-white font-medium py-2 px-4 rounded-xl hover:bg-gray-800 transition">
+          Rencontrer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carte 3 -->
+  <div class="w-full sm:w-1/2 md:w-1/4 px-3 mb-6">
+    <div class="rounded-2xl overflow-hidden shadow-lg bg-white">
+      <img class="w-full h-48 object-cover" src="assets/images/chan-swan-NKyl19P5IHg-unsplash.jpg" alt="Animal 3">
+      <div class="p-4">
+        <p class="text-sm text-gray-500">Lapin</p>
+        <p class="text-sm text-gray-500">Coco</p>
+        <p class="text-gray-700">Lapin • 1 an</p>
+        <p class="text-gray-500 text-sm mt-1">Annecy 74000</p>
+        <p class="text-gray-700 text-sm mt-2">Coco est un petit lapin plein d’énergie, très doux et parfait pour un foyer aimant et paisible.</p>
+        <button class="mt-4 w-full bg-gray-900 text-white font-medium py-2 px-4 rounded-xl hover:bg-gray-800 transition">
+          Rencontrer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carte 4 -->
+  <div class="w-full sm:w-1/2 md:w-1/4 px-3 mb-6">
+    <div class="rounded-2xl overflow-hidden shadow-lg bg-white">
+      <img class="w-full h-48 object-cover" src="assets/images/alan-king-KZv7w34tluA-unsplash.jpg" alt="Animal 4">
+      <div class="p-4">
+        <p class="text-sm text-gray-500">Chien</p>
+        <p class="text-sm text-gray-500">Rex</p>
+        <p class="text-gray-700">Chow-Chow • 4 ans</p>
+        <p class="text-gray-500 text-sm mt-1">Grenoble 38000</p>
+        <p class="text-gray-700 text-sm mt-2">Rex est un chien loyal et majestueux, idéal pour une personne douce et patiente qui aime les câlins silencieux.</p>
+        <button class="mt-4 w-full bg-gray-900 text-white font-medium py-2 px-4 rounded-xl hover:bg-gray-800 transition">
+          Rencontrer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carte 5 -->
+  <div class="w-full sm:w-1/2 md:w-1/4 px-3 mb-6">
+    <div class="rounded-2xl overflow-hidden shadow-lg bg-white">
+      <img class="w-full h-48 object-cover" src="assets/images/jae-park-7GX5aICb5i4-unsplash.jpg" alt="Animal 5">
+      <div class="p-4">
+        <p class="text-sm text-gray-500">Chat</p>
+        <p class="text-sm text-gray-500">Luna</p>
+        <p class="text-gray-700">Chat Roux • 3 ans</p>
+        <p class="text-gray-500 text-sm mt-1">Bordeaux 33000</p>
+        <p class="text-gray-700 text-sm mt-2">Luna adore les coins ensoleillés et les siestes à vos côtés. Elle vous offrira tout l’amour d’un regard félin.</p>
+        <button class="mt-4 w-full bg-gray-900 text-white font-medium py-2 px-4 rounded-xl hover:bg-gray-800 transition">
+          Rencontrer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carte 6 -->
+  <div class="w-full sm:w-1/2 md:w-1/4 px-3 mb-6">
+    <div class="rounded-2xl overflow-hidden shadow-lg bg-white">
+      <img class="w-full h-48 object-cover" src="assets/images/yosei-g-OVgE3m4MHKM-unsplash.jpg" alt="Animal 6">
+      <div class="p-4">
+        <p class="text-sm text-gray-500">Rongeur</p>
+        <p class="text-sm text-gray-500">Biscuit</p>
+        <p class="text-gray-700">Cochon d'Inde • 3 mois</p>
+        <p class="text-gray-500 text-sm mt-1">Tours 37000</p>
+        <p class="text-gray-700 text-sm mt-2">Biscuit est tout petit mais plein de vie ! Il aime les légumes croquants et les instants de douceur en famille.</p>
+        <button class="mt-4 w-full bg-gray-900 text-white font-medium py-2 px-4 rounded-xl hover:bg-gray-800 transition">
+          Rencontrer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carte 7 -->
+  <div class="w-full sm:w-1/2 md:w-1/4 px-3 mb-6">
+    <div class="rounded-2xl overflow-hidden shadow-lg bg-white">
+      <img class="w-full h-48 object-cover" src="assets/images/melanie-kreutz-IFnknR2Mv5o-unsplash.jpg" alt="Animal 7">
+      <div class="p-4">
+        <p class="text-sm text-gray-500">Lapin</p>
+        <p class="text-sm text-gray-500">Rio</p>
+        <p class="text-gray-700">Lapin nain brun • 5 mois</p>
+        <p class="text-gray-500 text-sm mt-1">Poitiers 86000</p>
+        <p class="text-gray-700 text-sm mt-2">Rio est discret, mignon comme tout, et adore explorer les petits coins de la maison avec délicatesse.</p>
+        <button class="mt-4 w-full bg-gray-900 text-white font-medium py-2 px-4 rounded-xl hover:bg-gray-800 transition">
+          Rencontrer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carte 8 -->
+  <div class="w-full sm:w-1/2 md:w-1/4 px-3 mb-6">
+    <div class="rounded-2xl overflow-hidden shadow-lg bg-white">
+      <img class="w-full h-48 object-cover" src="assets/images/peri-stojnic-5Vr_RVPfbMI-unsplash.jpg" alt="Animal 6">
+      <div class="p-4">
+        <p class="text-sm text-gray-500">Chien</p>
+        <p class="text-sm text-gray-500">Ruby</p>
+        <p class="text-gray-700">Chien Samoyed • 2 ans</p>
+        <p class="text-gray-500 text-sm mt-1">Chamonix 74400</p>
+        <p class="text-gray-700 text-sm mt-2">Ruby est une boule de neige pleine d’amour ! Elle adore les promenades et les câlins par temps frais.</p>
+        <button class="mt-4 w-full bg-gray-900 text-white font-medium py-2 px-4 rounded-xl hover:bg-gray-800 transition">
+          Rencontrer
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 <section>
     <div id="test_db" class="flex flex-row flex-wrap"></div>
