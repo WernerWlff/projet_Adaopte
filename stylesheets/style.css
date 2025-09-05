@@ -1,3 +1,29 @@
+:root {
+  --primary-color: #fffaf7;
+  --secondary-color: #ff6d38;
+  --accent-color: #7a78ff;
+  --heading-color: #333;
+  --light-color: #f9f9f9;
+  --dark-color: #333;
+
+  --btn-primary-bg: #333;
+  --btn-secondary-bg: #e74c3c;
+  --btn-accent-bg: #00a652;
+  --btn-primary-hover-bg: #8584ff;
+  --btn-secondary-hover-bg: #333;
+
+  --font-family-heading: 'Amatic SC', sans-serif;
+  --border-radius: 8px;
+
+  --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 3px 10px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 5px 15px rgba(0, 0, 0, 0.2);
+
+  --section-margin: 2rem 0;
+  --container-width: 90%;
+}
+
 .amatic-sc-regular {
   font-family: "Amatic SC", sans-serif;
   font-weight: 400;
