@@ -27,23 +27,27 @@
     </nav>
 </header>
 <section class="m-(--section-margin)">
-    <h1 class="text-[3rem] text-(--primary-color) Amatic">Donnons-leur autant qu'ils nous apportent</h1>
+    <h1 class="text-[3rem] Amatic" style="color: var(--primary-color)">Donnons-leur autant qu'ils nous apportent</h1>
     <p class="text-center">Chaque jour, des milliers d'animaux attendent une famille aimante.
     Trouvez votre compagnon idéal parmi nos animaux disponibles à l'adoption.</p>
 </section>
-<div class="text-center border-none shadow-(--shadow-lg) rounded-(--border-radius) ml-80 h-20 w-200">
-    <label for="options">Type d'animal
-        <select id="options" class="border shadow-(--shadow-sm) w-60 rounded-sm">
+<div class="border-none shadow-lg rounded-lg mx-90 my-8 w-[800px] p-8" style="box-shadow: var(--shadow-lg); border-radius: var(--border-radius)">
+    <div class="grid grid-cols-3 gap-4 mb-2">
+        <label for="options" class="block ml-5">Type d'animal</label>
+        <label for="city" class="block">Localisation</label>
+        <label class="block"></label>
+    </div>
+    <div class="grid grid-cols-3 gap-4">
+        <select id="options" class="border ml-5 w-50 rounded-sm" style="box-shadow: var(--shadow-sm)">
+            <option value="Tous">Tous les animaux</option>
             <option value="Chien">Chien</option>
             <option value="Chat">Chat</option>
             <option value="Lapin">Lapin</option>
             <option value="Rongeur">Rongeur</option>
         </select>
-    </label>
-    <label for="city">Localisation
-        <input id="city" type="text" placeholder="Votre ville" class="border shadow-(--shadow-sm) w-50 rounded-sm">
-    </label>
-    <button class="bg-(--dark-color) text-(--primary-color) w-40 h-10 border rounded-full text-center">Rechercher 🔎</button>
+        <input id="city" type="text" placeholder="   Votre ville" class="border shadow-(--shadow-sm) w-60 rounded-sm">
+        <button class="w-50 h-10 border rounded-full text-center" style="background: var(--dark-color); color: var(--primary-color)">Rechercher 🔎</button>
+    </div>
 </div>
 <body>
     <section id="text-area" class="m-(--section-margin)">
@@ -69,7 +73,7 @@
     <section class="m-(--section-margin)">
         <h2 class="text-[3rem] Amatic">Comment ça marche ?</h2>
         <p class="text-center text-(--dark-color) text-sm m-4">Adopter un animal est un engagement sérieux et à long terme. Voici notre processus d'adoption en quelques étapes simples.</p>
-        <div id="working-flex" class="flex space-x- gap-y-[10px] gap-x-[10px] text-center m-8">
+        <div id="working-flex" class="flex space-x-2 gap-y-[10px] gap-x-[10px] text-center m-8">
             <div class="border-none rounded-(--border-radius) w-85 h-80 shadow-(--shadow-xl)">
                 <p class="text-2xl"><img class="justify-self-center m-6" src="assets/favicon/magnifying-glass-32x32.png"> 1. Trouver votre compagnon</p>
                 <p class="mt-6 text-center">Parcourez notre base de données d'animaux disponibles et utilisez nos filtres pour trouver celui qui correspond à votre mode de vie.</p>

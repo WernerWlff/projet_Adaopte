@@ -27,8 +27,24 @@
         <button>Faire un don</button>
     </nav>
 </header>
-
-
+<div class="border-none shadow-lg rounded-lg mx-90 my-8 w-[800px] p-8" style="box-shadow: var(--shadow-lg); border-radius: var(--border-radius)">
+    <div class="grid grid-cols-3 gap-4 mb-2">
+        <label for="options" class="block ml-5">Type d'animal</label>
+        <label for="city" class="block">Localisation</label>
+        <label class="block"></label>
+    </div>
+    <div class="grid grid-cols-3 gap-4">
+        <select id="options" class="border ml-5 w-50 rounded-sm" style="box-shadow: var(--shadow-sm)">
+            <option value="Tous">Tous les animaux</option>
+            <option value="Chien">Chien</option>
+            <option value="Chat">Chat</option>
+            <option value="Lapin">Lapin</option>
+            <option value="Rongeur">Rongeur</option>
+        </select>
+        <input id="city" type="text" placeholder="   Votre ville" class="border shadow-(--shadow-sm) w-60 rounded-sm">
+        <button class="w-50 h-10 border rounded-full text-center" style="background: var(--dark-color); color: var(--primary-color)">Rechercher 🔎</button>
+    </div>
+</div>
 <div>
     <div id="test_db"></div>
 </div>
