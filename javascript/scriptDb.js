@@ -58,60 +58,76 @@ researchButton.addEventListener("click", () => {
 
 
 function creationCards(database){
-        for(let i = 0; i < Math.max(database[0].values.length, 8); i++) {
+  testDb.innerHTML = "" // pour vider l'affichage
+
+        for(let i = 0; i < Math.min(database[0].values.length, 8); i++) {
         const value = database[0].values[i];
 
-        console.log(typeof(value[0]))
-
-        // Création de la carte
+        // Création du container
         const container = document.createElement("div");
-        container.className = 'card flex space-x- gap-y-[10px] gap-x-[10px] text-center basis-1/4';
+        container.className = "w-full sm:w-1/2 md:w-1/4 px-3 mb-6";
         container.setAttribute("id", `${value[0]}`);
+        
+        // Création de la carte
+        const card = document.createElement("div");
+        card.className = "overflow-hidden shadow-lg bg-white flex flex-col h-full"
 
         // Image
-        const cardImage = document.createElement('div');
-        cardImage.className = "cardImage";
         const img = document.createElement("img");
+        img.className = "w-full h-48 object-cover";
         img.src = value[8];
         img.alt = `${value[1]}_${value[4]}`;
-        img.className = 'animalPhoto';
-        cardImage.appendChild(img);
+
+        // Zone d'infos
+        const textContainer = document.createElement("div");
+        textContainer.className = "p-4 flex flex-col flex-grow justify-between";
+
+        const textArea = document.createElement("div");
 
         // Type
         const cardType = document.createElement("p");
-        cardType.className = "animalType";
+        cardType.className = "text-sm text-gray-700";
         cardType.textContent = value[4];
 
         // Nom
         const cardName = document.createElement("p");
-        cardName.className = "animalName";
+        cardName.className = "text-lg text-(--accent-color) font-bold";
         cardName.textContent = value[1];
 
         // Âge et race
         const cardAgeAndBreed = document.createElement("p");
-        cardAgeAndBreed.className = "animalAgeAndBreed";
+        cardAgeAndBreed.className = "text-gray-700";
         cardAgeAndBreed.textContent = `${value[2]} · ${value[3]}`;
 
         // Localisation
         const cardLocalisation = document.createElement("p");
-        cardLocalisation.className = 'animalLocalisation';
+        cardLocalisation.className = 'text-gray-500 text-sm mt-1';
         cardLocalisation.textContent = `${value[5]}, ${value[6]}`;
 
+        // Description
         const cardDescription = document.createElement("p");
-        cardDescription.className = 'animalDescription';
+        cardDescription.className = 'text-gray-700 text-sm mt-2';
         cardDescription.textContent = value[7];
-
+          
+        // Bouton
         const meetUpButton = document.createElement("button");
-        meetUpButton.className = 'meetUpButton';
+        meetUpButton.className = 'bg-gray-900 w-1/4 text-white text-xs font-medium py-2 p-px mt-2 rounded-full hover:bg-gray-800 transition';
         meetUpButton.textContent = "Rencontrer";
 
-        container.appendChild(cardImage);
-        container.appendChild(cardType);
-        container.appendChild(cardName);
-        container.appendChild(cardAgeAndBreed);
-        container.appendChild(cardLocalisation);
-        container.appendChild(cardDescription);
-        container.appendChild(meetUpButton);
+        textArea.appendChild(cardType);
+        textArea.appendChild(cardName);
+        textArea.appendChild(cardAgeAndBreed);
+        textArea.appendChild(cardLocalisation);
+        textArea.appendChild(cardDescription);
+
+        textContainer.appendChild(textArea);
+        textContainer.appendChild(meetUpButton);
+
+        card.appendChild(img);
+        card.appendChild(textContainer);
+
+        container.appendChild(card);
+
         testDb.appendChild(container);
       }
 }
