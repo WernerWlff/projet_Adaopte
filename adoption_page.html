@@ -10,10 +10,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
+    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
     <script defer src="./javascript/scriptDb.js"></script>
 </head>
-
+<body>
 <header>
     <nav>
         <div id="logo"><img src="assets/favicon/favicon-32x32.png">Adaopte</div>
@@ -26,25 +27,27 @@
         <button>Faire un don</button>
     </nav>
 </header>
-
-<body>
-
-<section>
-<select id="researchAnimalSelection">
-    <option value ="Tout">Tout</option>
-    <option value="Chien">Chien</option>
-    <option value="Chat">Chat</option>
-    <option value="Lapin">Lapin</option>
-    <option value="Rongeur">Rongeur</option>
-</select>
-<input id="researchInput" type="text" placeholder="Votre ville">
-<button id="researchButton">Rechercher</button> <!-- bouton pour faire des recherches -->
-</section>
-
+<div class="border-none shadow-lg rounded-lg mx-90 my-8 w-[800px] p-8" style="box-shadow: var(--shadow-lg); border-radius: var(--border-radius)">
+    <div class="grid grid-cols-3 gap-4 mb-2">
+        <label for="options" class="block ml-5">Type d'animal</label>
+        <label for="city" class="block">Localisation</label>
+        <label class="block"></label>
+    </div>
+    <div class="grid grid-cols-3 gap-4">
+        <select id="options" class="border ml-5 w-50 rounded-sm" style="box-shadow: var(--shadow-sm)">
+            <option value="Tous">Tous les animaux</option>
+            <option value="Chien">Chien</option>
+            <option value="Chat">Chat</option>
+            <option value="Lapin">Lapin</option>
+            <option value="Rongeur">Rongeur</option>
+        </select>
+        <input id="city" type="text" placeholder="   Votre ville" class="border shadow-(--shadow-sm) w-60 rounded-sm">
+        <button class="w-50 h-10 border rounded-full text-center" style="background: var(--dark-color); color: var(--primary-color)">Rechercher 🔎</button>
+    </div>
+</div>
 <div>
     <div id="test_db"></div>
 </div>
-</body>
 <footer>
     <ul>
         <li><h3>Adaopte</h3></li>
@@ -72,4 +75,5 @@
         Ce site a été développé dans le cadre d'un projet pour ADA Tech School.
     </p>
 </footer>
+</body>
 </html>
