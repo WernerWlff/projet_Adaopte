@@ -4,52 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adaopte</title>
+
     <link rel="stylesheet" href="stylesheets/style.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
     <script defer src="./javascript/scriptDb.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<header>
-    <nav>
-        <div id="logo"><img src="assets/favicon/favicon-32x32.png">Adaopte</div>
-        <ul>
-            <li><img src="assets/navbar_icons/house.svg" id="icons"><a href="homepage.html"> Accueil</a></li>
-            <li><img src="assets/navbar_icons/bone.svg" id="icons"><a href="adoption_page.html"> J'adopte</a></li>
-            <li><img src="assets/navbar_icons/fish.svg" id="icons"> Guide de l'adoption</li>
-            <li><img src="assets/navbar_icons/squirrel.svg" id="icons"> Devenir Bénévole</li>
-        </ul>
-        <button class="text-(--primary-color) bg-(--btn-secondary-bg) rounded-full w-32">Faire un don 🫶</button>
-    </nav>
-</header>
+  
+<body>
+   <a href="#contenu" class="skiplink" >Aller au contenu</a> 
+  
+<header class="sticky top-0 z-50 bg-stone-50/90 backdrop-blur border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-4">
+            
+            <div class="grid grid-cols-[1fr_auto_1fr] items-center h-16">
+            
+                <a id="logo" href="homepage.html"
+                    class="justify-self-start inline-flex items-center gap-2 font-semibold text-neutral-900">
+                    <img src="assets/favicon/pattes.png" alt="" width="32" height="32" class="block" />
+                    <span>Ada<span class="text-orange-500">opte</span></span>
+                </a>
+
+                <nav aria-label="Navigation principale" class="justify-self-center">
+                    <ul class="flex items-center gap-8 text-neutral-800">
+                    <li>
+                        <a href="homepage.html" aria-current="page"
+                        class="inline-flex items-center gap-2 hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded">
+                        <img src="assets/navbar_icons/house.svg" alt="" aria-hidden="true" class="w-5 h-5" />
+                        <span>Accueil</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="adoption_page.html"
+                        class="inline-flex items-center gap-2 hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded">
+                        <img src="assets/navbar_icons/bone.svg" alt="" aria-hidden="true" class="w-5 h-5" />
+                        <span>J’adopte</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="guide.html"
+                        class="inline-flex items-center gap-2 hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded">
+                        <img src="assets/navbar_icons/fish.svg" alt="" aria-hidden="true" class="w-5 h-5" />
+                        <span>Guide de l’adoption</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="volunteer_form.html"
+                        class="inline-flex items-center gap-2 hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded">
+                        <img src="assets/navbar_icons/squirrel.svg" alt="" aria-hidden="true" class="w-5 h-5" />
+                        <span>Devenir bénévole</span>
+                        </a>
+                    </li>
+                    </ul>
+                </nav>
+                
+                <button type="button" class="justify-self-end inline-flex items-center gap-2 rounded-full bg-[#F05A3E] text-white px-6 py-2 font-medium shadow-md hover:opacity-95 active:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+                    <span>Faire un don 🫶</span>
+                </button>
+
+            </div>
+        </div>
+    </header>
+  
+ <main id="contenu" tabindex="-1">
 <section class="m-(--section-margin)">
     <h1 class="text-[3rem] Amatic" style="color: var(--primary-color)">Donnons-leur autant qu'ils nous apportent</h1>
     <p class="text-center">Chaque jour, des milliers d'animaux attendent une famille aimante.
     Trouvez votre compagnon idéal parmi nos animaux disponibles à l'adoption.</p>
 </section>
+     
 <div class="border-none rounded-lg mx-120 my-8 w-[800px] p-6" style="box-shadow: var(--shadow-lg); border-radius: var(--border-radius)">
-    <div class="grid grid-cols-3 gap-4 mb-2">
-        <label for="options" class="block ml-5">Type d'animal</label>
-        <label for="city" class="block">Localisation</label>
-        <label class="block"></label>
-    </div>
-    <div class="grid grid-cols-3 gap-4">
-        <select id="options" class="border ml-5 w-50 rounded-sm" style="box-shadow: var(--shadow-sm)">
-            <option value="Tous">Tous les animaux</option>
-            <option value="Chien">Chien</option>
-            <option value="Chat">Chat</option>
-            <option value="Lapin">Lapin</option>    
-            <option value="Rongeur">Rongeur</option>
-        </select>
-        <input id="city" type="text" placeholder="   Votre ville" class="border shadow-(--shadow-sm) w-60 rounded-sm">
-        <button class="w-60 h-10 border rounded-full text-center" style="background: var(--dark-color); color: var(--primary-color)"><strong>Rechercher 🔎</strong></button>
+  <div class="grid grid-cols-3 gap-4 mb-2">
+    
+    <form action="adoption_page.html" method="get" aria-label="Recherche d’animaux">
+              <div class="form-row">
+                  <label for="researchAnimalSelection">Type d’animal</label>
+                  <select id="researchAnimalSelection" class="border ml-5 w-50 rounded-sm" style="box-shadow: var(--shadow-sm)" name="type">
+                  <option value="Tout">Tout</option>
+                  <option value="Chien">Chien</option>
+                  <option value="Chat">Chat</option>
+                 <option value="Lapin">Lapin</option>
+                 <option value="Rongeur">Rongeur</option>
+                 </select>
+              </div>
+
+            <div class="form-row">
+                <label for="researchInput">Localisation</label>
+                <input
+                id="researchInput"
+                name="city"
+                type="search"
+                placeholder="  Votre ville"
+                autocomplete="address-level2"
+                inputmode="search"
+                class="border shadow-(--shadow-sm) w-60 rounded-sm">
+            </div>
+
+            <button class="w-60 h-10 border rounded-full text-center" style="background: var(--dark-color); color: var(--primary-color)" id="researchButton" type="submit"><strong>Rechercher 🔎</strong></button>
+        </form>
     </div>
 </div>
-<body>
+  
     <section id="text-area" class="m-(--section-margin)">
         <h2 class="text-[3rem] Amatic">Nos animaux à adopter</h2>
         <p class="text-center">Découvrez en images tous nos animaux qui attendent une famille aimante. Chaque photo raconte une histoire et un espoir.</p>
