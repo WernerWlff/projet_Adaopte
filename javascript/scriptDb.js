@@ -17,6 +17,7 @@ researchButton.addEventListener("click", () => {
       .then(res => res.arrayBuffer())
       .then(buf => {
         const db = new SQL.Database(new Uint8Array(buf));
+        testDb.innerHTML = '';
 
         // type et city demandés
         if(selectValue !== "Tout" && inputValue !== ''){
@@ -38,7 +39,6 @@ researchButton.addEventListener("click", () => {
           console.log(res[0].values.length)
           creationCards(res);
         }
-
 
         // type et city non demandé 
         else{
