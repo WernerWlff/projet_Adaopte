@@ -115,7 +115,8 @@ nav ul {
   padding: 2rem 2rem;
 }
 
-#animals-grid {
+/* A retirer vu que j'ai retiré les grids fait à la main et remplacés par du tailwind */
+/* #animals-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -305,4 +306,4 @@ nav ul {
     gap: 1rem;
     flex-wrap: wrap;
   }
-}
+} */

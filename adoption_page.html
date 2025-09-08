@@ -13,7 +13,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
     <script defer src="./javascript/scriptDb.js"></script>
-    <script defer src="./javascript/menu.js"></script>
 </head>
 <body class="font-roboto"> 
 
@@ -25,7 +24,7 @@
                 
                 <a id="logo" href="homepage.html" class="flex items-center gap-2 font-semibold text-neutral-900">
                     <img src="assets/favicon/pattes.png" alt="" width="32" height="32" class="block" />
-                    <span class="text-2xl sm:text-3xl font-amatic">Ada<span class="text-orange-500">opte</span></span>
+                    <span class="text-2xl sm:text-3xl font-amatic">Ada<span class="text-(--secondary-color)">opte</span></span>
                 </a>
 
                 <nav aria-label="Navigation principale" class="hidden lg:block">
@@ -48,7 +47,7 @@
                             <a href="guide.html"
                             class="inline-flex items-center gap-2 px-3 py-2 hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded transition-colors">
                                 <img src="assets/navbar_icons/fish.svg" alt="" aria-hidden="true" class="w-4 h-4" />
-                                <span class="text-base font-medium">Guide</span>
+                                <span class="text-base font-medium">Guide de l'adoption</span>
                             </a>
                         </li>
                         <li>
@@ -65,33 +64,7 @@
                     <button type="button" class="hidden sm:inline-flex items-center gap-2 rounded-full bg-[#F05A3E] text-white px-4 lg:px-6 py-2 font-medium shadow-md hover:opacity-95 active:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-opacity">
                         <span class="text-sm lg:text-base">Faire un don 🫶</span>
                     </button>
-                    
-                    <button id="mobile-menu-button" class="lg:hidden p-2 rounded-md text-neutral-700 hover:text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-orange-500">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                        </svg>
-                    </button>
                 </div>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="lg:hidden hidden border-t border-stone-200 bg-stone-50">
-            <div class="px-4 py-2 space-y-1">
-                <a href="homepage.html" class="block px-3 py-2 text-base font-medium text-neutral-900 hover:bg-neutral-200 rounded-md">
-                    <img src="assets/navbar_icons/house.svg" alt="" aria-hidden="true" class="w-5 h-5 inline-block" /> Accueil
-                </a>
-                <a href="adoption_page.html" class="block px-3 py-2 text-base font-medium text-neutral-900 hover:bg-neutral-200 rounded-md">
-                    <img src="assets/navbar_icons/bone.svg" alt="" aria-hidden="true" class="w-5 h-5 inline-block" /> J'adopte
-                </a>
-                <a href="guide.html" class="block px-3 py-2 text-base font-medium text-neutral-900 hover:bg-neutral-200 rounded-md">
-                    <img src="assets/navbar_icons/fish.svg" alt="" aria-hidden="true" class="w-5 h-5 inline-block" /> Guide de l'adoption
-                </a>
-                <a href="volunteer_form.html" class="block px-3 py-2 text-base font-medium text-neutral-900 hover:bg-neutral-200 rounded-md">
-                    <img src="assets/navbar_icons/squirrel.svg" alt="" aria-hidden="true" class="w-5 h-5 inline-block" /> Devenir bénévole
-                </a>
-                <a href="#" class="block px-3 py-2 text-base font-medium text-white bg-[#F05A3E] hover:opacity-95 rounded-md mt-4">
-                    🫶 Faire un don
-                </a>
             </div>
         </div>
     </header>
@@ -143,14 +116,35 @@
             </div>
         </section>
     </main>
-    
+
+    <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-(--primary-color) border-t border-gray-200 shadow-lg">
+        <div class="grid grid-cols-4 h-16">
+            <a href="homepage.html" class="flex flex-col items-center justify-center py-2 text-(--secondary-color)">
+                <img src="assets/navbar_icons/house.svg" alt="" class="w-5 h-5 mb-1">
+                <span class="text-xs font-medium">Accueil</span>
+            </a>
+            <a href="adoption_page.html" class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-(--secondary-color) transition-colors">
+                <img src="assets/navbar_icons/bone.svg" alt="" class="w-5 h-5 mb-1">
+                <span class="text-xs font-medium">J'adopte</span>
+            </a>
+            <a href="guide.html" class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-(--secondary-color) transition-colors">
+                <img src="assets/navbar_icons/fish.svg" alt="" class="w-5 h-5 mb-1">
+                <span class="text-xs font-medium">Guide de l'adoption</span>
+            </a>
+            <a href="volunteer_form.html" class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-(--secondary-color) transition-colors">
+                <img src="assets/navbar_icons/squirrel.svg" alt="" class="w-5 h-5 mb-1">
+                <span class="text-xs font-medium">Bénévole</span>
+            </a>
+        </div>
+    </nav>
+
     <footer class="bg-(--dark-color) py-12">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
 
                 <div class="space-y-4 lg:col-span-1">
                     <h4 class="text-3xl lg:text-4xl text-(--secondary-color) font-bold mb-3 Amatic">Adaopte</h4>
-                    <p class="text-sm leading-relaxed text-gray-400 max-w-sm">
+                    <p class="text-sm leading-relaxed text-white max-w-sm">
                         Notre mission est de trouver des foyers aimants pour chaque animal abandonné et de promouvoir le bien-être animal.
                     </p>
                     <div class="flex gap-3 mt-6">
@@ -181,7 +175,7 @@
 
                 <div class="space-y-4">
                     <h3 class="text-2xl lg:text-3xl text-(--secondary-color) font-bold mb-4">Contact</h3>
-                    <div class="space-y-2 text-sm text-gray-400">
+                    <div class="space-y-2 text-sm text-white">
                         <p>116 Rue du Faubourg Saint-Martin</p>
                         <p>75010 Paris, France</p>
                         <p>Email: contact@adaopte.fr</p>
@@ -197,6 +191,5 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
