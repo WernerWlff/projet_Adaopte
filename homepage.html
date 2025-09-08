@@ -4,48 +4,123 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adaopte</title>
-    <link rel="stylesheet" href="stylesheets/style.css">
 
+    <link rel="stylesheet" href="stylesheets/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
     <script defer src="./javascript/scriptDb.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<header>
-    <nav>
-        <div id="logo"><img src="assets/favicon/favicon-32x32.png">Adaopte</div>
-        <ul>
-            <li><img src="assets/navbar_icons/house.svg" id="icons"><a href="homepage.html"> Accueil</a></li>
-            <li><img src="assets/navbar_icons/bone.svg" id="icons"><a href="adoption_page.html"> J'adopte</a></li>
-            <li><img src="assets/navbar_icons/fish.svg" id="icons"> Guide de l'adoption</li>
-            <li><img src="assets/navbar_icons/squirrel.svg" id="icons"> Devenir Bénévole</li>
-        </ul>
-        <button>Faire un don</button>
-    </nav>
-</header>
-<section>
-    <h1>Donnons-leur autant qu'ils nous apportent</h1>
-    <p>Chaque jour, des milliers d'animaux attendent une famille aimante.
+  
+<body>
+   <a href="#contenu" class="skiplink" >Aller au contenu</a> 
+  
+<header class="sticky top-0 z-50 bg-stone-50/90 backdrop-blur border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-4">
+            
+            <div class="grid grid-cols-[1fr_auto_1fr] items-center h-16">
+            
+                <a id="logo" href="homepage.html"
+                    class="justify-self-start inline-flex items-center gap-2 font-semibold text-neutral-900">
+                    <img src="assets/favicon/pattes.png" alt="" width="32" height="32" class="block" />
+                    <span>Ada<span class="text-orange-500">opte</span></span>
+                </a>
+
+                <nav aria-label="Navigation principale" class="justify-self-center">
+                    <ul class="flex items-center gap-8 text-neutral-800">
+                    <li>
+                        <a href="homepage.html" aria-current="page"
+                        class="inline-flex items-center gap-2 hover:bg-neutral-200 focus-visible:outline; focus-visible:outline-2 focus-visible:outline-offset-2 rounded">
+                        <img src="assets/navbar_icons/house.svg" alt="" aria-hidden="true" class="w-5 h-5" />
+                        <span>Accueil</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="adoption_page.html"
+                        class="inline-flex items-center gap-2 hover:text-black focus-visible:outline; focus-visible:outline-2 focus-visible:outline-offset-2 rounded">
+                        <img src="assets/navbar_icons/bone.svg" alt="" aria-hidden="true" class="w-5 h-5" />
+                        <span>J’adopte</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="guide.html"
+                        class="inline-flex items-center gap-2 hover:text-black focus-visible:outline; focus-visible:outline-2 focus-visible:outline-offset-2 rounded">
+                        <img src="assets/navbar_icons/fish.svg" alt="" aria-hidden="true" class="w-5 h-5" />
+                        <span>Guide de l’adoption</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="volunteer_form.html"
+                        class="inline-flex items-center gap-2 hover:text-black focus-visible:outline; focus-visible:outline-2 focus-visible:outline-offset-2 rounded">
+                        <img src="assets/navbar_icons/squirrel.svg" alt="" aria-hidden="true" class="w-5 h-5" />
+                        <span>Devenir bénévole</span>
+                        </a>
+                    </li>
+                    </ul>
+                </nav>
+                
+                <button type="button" class="justify-self-end inline-flex items-center gap-2 rounded-full bg-[#F05A3E] text-white px-6 py-2 font-medium shadow-md hover:opacity-95 active:opacity-90 focus-visible:outline; focus-visible:outline-2 focus-visible:outline-offset-2">
+                    <span>Faire un don 🫶</span>
+                </button>
+
+            </div>
+        </div>
+    </header>
+  
+<main id="contenu" tabindex="-1">
+<section class="m-(--section-margin)">
+    <h1 class="text-[3rem] Amatic" style="color: var(--primary-color)">Donnons-leur autant qu'ils nous apportent</h1>
+    <p class="text-center">Chaque jour, des milliers d'animaux attendent une famille aimante.
     Trouvez votre compagnon idéal parmi nos animaux disponibles à l'adoption.</p>
 </section>
+     
+<div class="border-none rounded-lg mx-120 my-8 w-[800px] p-6" style="box-shadow: var(--shadow-lg); border-radius: var(--border-radius)">
+    
+    <form action="adoption_page.html" method="get" aria-label="Recherche d’animaux" class="flex flex-col gap-6">
 
-<select id="researchAnimalSelection">
-    <option value ="Tout">Tout</option>
-    <option value="Chien">Chien</option>
-    <option value="Chat">Chat</option>
-    <option value="Lapin">Lapin</option>
-    <option value="Rongeur">Rongeur</option>
-</select>
-<input id="researchInput" type="text" placeholder="Votre ville">
-<button id="researchButton">Rechercher</button> <!-- bouton pour faire des recherches -->
+        <div class="flex justify-center items-end gap-6">
+            <div class="flex flex-col">
+                <label for="researchAnimalSelection" class="mb-1 font-medium">Type d’animal</label>
+                <select id="researchAnimalSelection" 
+                        name="type"
+                        class="border rounded-sm p-2 w-60" 
+                        style="box-shadow: var(--shadow-sm)">
+                    <option value="Tous">Tous les animaux</option>
+                    <option value="Chien">Chien</option>
+                    <option value="Chat">Chat</option>
+                    <option value="Lapin">Lapin</option>
+                    <option value="Rongeur">Rongeur</option>
+                </select>
+            </div>
 
-<body>
-    <section id="text-area">
-        <h2>Nos animaux à adopter</h2>
-        <p>Découvrez en images tous nos animaux qui attendent une famille aimante. Chaque photo raconte une histoire et un espoir.</p>
+            <div class="flex flex-col">
+                <label for="researchInput" class="mb-1 font-medium">Localisation</label>
+                <input id="researchInput"
+                        name="city"
+                        type="search"
+                        placeholder="Votre ville"
+                        autocomplete="address-level2"
+                        inputmode="search"
+                        class="border rounded-sm p-2 w-60" 
+                        style="box-shadow: var(--shadow-sm)">
+            </div>
+
+            <button id="researchButton" 
+                type="submit"
+                class="w-60 h-10 border rounded-full text-center font-bold" 
+                style="background: var(--dark-color); color: var(--primary-color)">
+                <strong>Rechercher 🔎</strong>
+            </button>
+        </div>
+    </form>
+</div>
+  
+    <section id="text-area" class="m-(--section-margin)">
+        <h2 class="text-[3rem] Amatic">Nos animaux à adopter</h2>
+        <p class="text-center">Découvrez en images tous nos animaux qui attendent une famille aimante. Chaque photo raconte une histoire et un espoir.</p>
         <div class="container">
             <div id="animals-grid">
                 <div class="grid-item"><img src="assets/images/charlesdeluvio-K4mSJ7kc0As-unsplash.jpg" alt="Charlie, le carlin"></div>
@@ -62,55 +137,87 @@
             <a href="#" class="button">Voir tous les animaux</a>
         </div>
     </section>
-    <section>
-        <h2>Comment ça marche</h2>
-        <p>Adopter un animal est un engagement sérieux et à long terme. Voici notre processus d'adoption en quelques étapes simples.</p>
-        <div id="working-flex">
-            <ol>
-                <li>Trouver votre compagnon</li>
-                <p>Parcourez notre base de données d'animaux disponibles et utilisez nos filtres pour trouver celui qui correspond à votre mode de vie.</p>
-                <li>Remplissez une demande</li>
-                <p>Soumettez votre formulaire d'adoption pour l'animal qui vous intéresse. Nous examinons chaque demande avec soin.</p>
-                <li>Rencontrez l'animal</li>
-                <p>Visitez le refuge pour rencontrer l'animal et voir si vous êtes compatibles. C'est une étape essentielle du processus.</p>
-                <li>Bienvenue à la maison</li>
-                <p>Une fois votre demande approuvée, vous pouvez accueillir votre nouvel ami chez vous. Nous restons disponibles pour vous conseiller.</p>
-            </ol>
+
+    <section class="m-(--section-margin)">
+        <h2 class="text-[3rem] Amatic">Comment ça marche ?</h2>
+        <p class="text-center text-(--dark-color) text-[1rem] mb-4">Adopter un animal est un engagement sérieux et à long terme. Voici notre processus d'adoption en quelques étapes simples.</p>
+        <div id="working-flex" class="flex space-x-2 gap-y-[10px] gap-x-[24px] text-center mx-70 mb-16">
+            <div class="border-none rounded-(--border-radius) w-85 h-80 shadow-(--shadow-xl) px-6 py-8">
+                <p class="text-2xl"><img class="justify-self-center m-6" src="assets/favicon/magnifying-glass-32x32.png"> 1. Trouver votre compagnon</p>
+                <p class="mt-6 text-center">Parcourez notre base de données d'animaux disponibles et utilisez nos filtres pour trouver celui qui correspond à votre mode de vie.</p>
+            </div>
+            <div class="border-none rounded-(--border-radius) w-80 h-80 shadow-(--shadow-xl) px-6 py-8">
+                <p class="text-2xl"><img class="justify-self-center m-6"  src="assets/favicon/form-icon-32x32.png">2. Remplissez une demande</p>
+                <p class="mt-6">Soumettez votre formulaire d'adoption pour l'animal qui vous intéresse. Nous examinons chaque demande avec soin.</p>
+            </div>
+            <div class="border-none rounded-(--border-radius) w-80 h-80 shadow-(--shadow-xl) px-6 py-8">
+                <p class="text-2xl"><img class="justify-self-center m-6"  src="assets/favicon/welcome-hand-32x32.png">3. Rencontrez l'animal</p>
+                <p class="mt-6">Visitez le refuge pour rencontrer l'animal et voir si vous êtes compatibles. C'est une étape essentielle du processus.</p>
+            </div>
+            <div class="border-none rounded-(--border-radius) w-80 h-80 shadow-(--shadow-xl) px-6 py-8">
+                <p class="text-2xl"><img class="justify-self-center m-6"  src="assets/favicon/house-icon-32x32.png">4. Bienvenue à la maison</p>
+                <p class="mt-6">Une fois votre demande approuvée, vous pouvez accueillir votre nouvel ami chez vous. Nous restons disponibles pour vous conseiller.</p>
+            </div>
         </div>
     </section>
-    <section>
-        <h2>Prêt⸱e à changer une vie ?</h2>
-        <p>Adoptez, partagez, soutenez... Chaque geste compte. Que vous ouvriez votre foyer ou votre coeur, vous pouvez offrir une seconde chance à un animal abandonné.</p>
-        <button>Adopter un animal</button>
-        <button>Faire un don</button>
-        <button>Devenir bénévole</button>
+
+    <section class="bg-(--primary-color)">
+        <div class="text-center p-10">
+            <h2 class="text-[3rem]  Amatic">Prêt⸱e à changer une vie ?</h2>
+            <p class="text-center">Adoptez, partagez, soutenez... Chaque geste compte. Que vous ouvriez votre foyer ou votre coeur, vous pouvez offrir une seconde chance à un animal abandonné.</p>
+            <button class="text-(--primary-color) rounded-x1(--border-radius) bg-(--btn-primary-bg) rounded-full w-38 h-10 mt-6 mr-4"><strong>Adopter un animal</strong></button>
+            <button class="text-(--primary-color) bg-(--btn-secondary-bg) rounded-full w-38 h-10 mr-4"><strong>Faire un don 🫶</strong></button>
+            <button class="text-(--primary-color) bg-(--btn-accent-bg) rounded-full w-38 h-10"><strong>Devenir bénévole</strong></button>
+        </div>
     </section>
-</body>
-<footer>
-    <ul>
-        <li><h3>Adaopte</h3></li>
-            <p>Notre mission est de trouver des foyers aimants pour chaque animal abandonné et de promouvoir le bien-être animal.</p>
-            <div id="socials-links">
-                <img src="assets/socials_links_logo/facebook.svg" alt="Facebook">
-                <img src="assets/socials_links_logo/instagram.svg" alt="Instagram">
-                <img src="assets/socials_links_logo/linkedin.svg" alt="LinkedIn">
-                <img src="assets/socials_links_logo/twitch.svg" alt="Twitch">
+    <footer class="bg-(--dark-color) text-(--primary-color) Roboto py-8 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+
+                <div class="space-y-4">
+                    <h4 class="text-3xl text-(--secondary-color) Amatic font-bold mb-3">Adaopte</h4>
+                    <p class="text-sm leading-relaxed max-w-xs">
+                    Notre mission est de trouver des foyers aimants pour chaque animal abandonné et de promouvoir le bien-être animal.
+                    </p>
+                    <div id="socials-links" class="flex gap-3 mt-4">
+                    <div class="flex items-center justify-center w-9 h-9 rounded-full bg-neutral-700 hover:bg-neutral-600 transition-colors cursor-pointer">
+                        <img src="assets/socials_links_logo/facebook.svg" alt="Facebook" class="w-5 h-5">
+                    </div>
+                    <div class="flex items-center justify-center w-9 h-9 rounded-full bg-neutral-700 hover:bg-neutral-600 transition-colors cursor-pointer">
+                        <img src="assets/socials_links_logo/instagram.svg" alt="Instagram" class="w-5 h-5">
+                    </div>
+                    <div class="flex items-center justify-center w-9 h-9 rounded-full bg-neutral-700 hover:bg-neutral-600 transition-colors cursor-pointer">
+                        <img src="assets/socials_links_logo/linkedin.svg" alt="LinkedIn" class="w-5 h-5">
+                    </div>
+                    <div class="flex items-center justify-center w-9 h-9 rounded-full bg-neutral-700 hover:bg-neutral-600 transition-colors cursor-pointer">
+                        <img src="assets/socials_links_logo/twitch.svg" alt="Twitch" class="w-5 h-5">
+                    </div>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-3xl text-(--secondary-color) Amatic font-bold mb-4">Informations utiles</h3>
+                    <div class="space-y-2">
+                    <a href="#" class="block text-sm text-neutral-400 hover:text-white transition-colors">FAQs</a>
+                    <a href="#" class="block text-sm text-neutral-400 hover:text-white transition-colors">Conseils d'adoption</a>
+                    <a href="#" class="block text-sm text-neutral-400 hover:text-white transition-colors">Nous contacter</a>
+                    <a href="#" class="block text-sm text-neutral-400 hover:text-white transition-colors">Mentions légales</a>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <h3 class="text-3xl text-(--secondary-color) Amatic font-bold mb-4">Contact</h3>
+                    <p>116 Rue du Faubourg Saint-Martin</p>
+                    <p>75010 Paris, France</p>
+                    <p>Email: contact@adaopte.fr</p>
+                    <p>Tél: +33 1 23 45 67 89</p>
+                </div>
+
             </div>
-        <li><h3>Informations utiles</h3></li>
-            <p>FAQs</p>
-            <p>Conseils d'adoption</p>
-            <p>Nous contacter</p>
-            <p>Mentions légales</p>
-        <li><h3>Contact</h3></li>
-            <p>116 Rue du Faubourg Saint-Martin
-                75010 Paris, France
-                Email: contact@adaopte.fr
-                Tél: +33 1 23 45 67 89
-            </p>
-    </ul>
-    <hr>
-    <p>© 2025 Adaopte. Tous droits réservés.
-        Ce site a été développé dans le cadre d'un projet pour ADA Tech School.
-    </p>
-</footer>
+
+        <hr class="text-neutral-600 mt-4 mb-4">
+        <p class="text-center text-neutral-500 text-[12px]">© 2025 Adaopte. Tous droits réservés.</p>
+        <p class="text-center text-neutral-500 text-[12px]">Ce site a été développé dans le cadre d'un projet pour ADA Tech School.</p>
+    </footer>
+</body>
 </html>
