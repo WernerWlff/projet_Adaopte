@@ -8,7 +8,7 @@ researchButton.addEventListener("click", () => {
   let inputValue = researchInput.value;
   let res;
 
-  testDb.className = 
+  testDb.className = "flex flex-wrap mx-3 w-full"
 
   testDb.innerHTML = '';
 
