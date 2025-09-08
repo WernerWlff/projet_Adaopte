@@ -8,6 +8,10 @@ researchButton.addEventListener("click", () => {
   let inputValue = researchInput.value;
   let res;
 
+  testDb.className = 
+
+  testDb.innerHTML = '';
+
   inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase();
   
   initSqlJs({
@@ -20,21 +24,21 @@ researchButton.addEventListener("click", () => {
         testDb.innerHTML = '';
 
         // type et city demandés
-        if(selectValue !== "Tout" && inputValue !== ''){
+        if(selectValue !== "Tous" && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}' AND city='${inputValue}';`);
           console.log(res[0].values.length)
           creationCards(res);
         }
 
         //type demandé et pas city
-        else if(selectValue !=='Tout' && inputValue === ''){
+        else if(selectValue !=='Tous' && inputValue === ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}';`);
           console.log(res[0].values.length)
           creationCards(res);
         }
 
         //type non demandé et city demandée
-        else if(selectValue ==='Tout' && inputValue !== ''){
+        else if(selectValue ==='Tous' && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE city='${inputValue}';`);
           console.log(res[0].values.length)
           creationCards(res);
