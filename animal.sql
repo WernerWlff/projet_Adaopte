@@ -159,7 +159,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
   'Rennes',
   '35000',
   'Oscar est un chien joueur et affectueux.',
-  'https://source.unsplash.com/400x300/?dog'
+  'assets/images/noemi-macavei-katocz-c7bUIRBqapA-unsplash.jpg'
 ),
 (
   'Bella',
@@ -169,7 +169,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
   'Nantes',
   '44000',
   'Bella est vive et intelligente.',
-  'https://source.unsplash.com/400x300/?dog'
+  'assets/images/baptist-standaert-mx0DEnfYxic-unsplash.jpg'
 ),
 (
   'Luna',
@@ -179,7 +179,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
   'Paris',
   '75000',
   'Luna est douce et calme.',
-  'https://source.unsplash.com/400x300/?cat'
+  'assets/images/larissa-dupont-2Tamc4kgCZE-unsplash.jpg'
 ),
 (
   'Milo',
@@ -189,7 +189,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
   'Lyon',
   '69000',
   'Milo adore jouer et grimper.',
-  'https://source.unsplash.com/400x300/?cat'
+  'assets/images/alex-meier-KGiQFgF7dkc-unsplash.jpg'
 ),
 (
   'Ruby',
@@ -199,7 +199,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
   'Bordeaux',
   '33000',
   'Ruby est curieuse et câline.',
-  'https://source.unsplash.com/400x300/?rabbit'
+  'assets/images/nikolett-emmert-PxQDBWT2hYg-unsplash.jpg'
 ),
 (
   'Thumper',
@@ -209,7 +209,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
   'Marseille',
   '13000',
   'Thumper est calme et gourmand.',
-  'https://source.unsplash.com/400x300/?rabbit'
+  'assets/images/paolo-chiabrando-Bl6XTL61rI8-unsplash.jpg'
 ),
 (
   'Nina',
@@ -219,7 +219,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
   'Lille',
   '59000',
   'Nina aime la compagnie.',
-  'https://source.unsplash.com/400x300/?guineapig'
+  'assets/images/jack-catalano-q1pw1dOW0_0-unsplash.jpg'
 ),
 (
   'Max',
@@ -229,7 +229,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
   'Toulouse',
   '31000',
   'Max est vif et curieux.',
-  'https://source.unsplash.com/400x300/?hamster'
+  'assets/images/pete-f-alFJcJBaWHc-unsplash.jpg'
 ),
 (
   'Zeus',
@@ -239,7 +239,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
   'Nice',
   '06000',
   'Zeus est protecteur et loyal.',
-  'https://source.unsplash.com/400x300/?dog'
+  'assets/images/steve-smith-KV1pVY72r-A-unsplash.jpg'
 ),
 (
   'Shadow',
@@ -249,7 +249,7 @@ INSERT INTO animal (name, age, breed, type, city, zipcode, description, imageUrl
   'Strasbourg',
   '67000',
   'Shadow est grand et câlin.',
-  'https://source.unsplash.com/400x300/?cat'
+  'assets/images/sergei-wing-D8RcXNWGNQc-unsplash.jpg'
 );
 
 INSERT INTO person (firstname, lastname, email, city, zipcode, description) VALUES
