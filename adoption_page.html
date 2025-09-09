@@ -14,9 +14,11 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
     <script defer src="./javascript/scriptDb.js"></script>
 </head>
+
 <body class="font-roboto"> 
 
    <a href="#contenu" class="skiplink sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-stone-50/90 text-black px-4 py-2 rounded z-50">Aller au contenu</a> 
+
   
     <header class="sticky top-0 z-50 bg-stone-50/90 backdrop-blur border-b border-stone-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -104,11 +106,25 @@
                                 Rechercher 🔎
                             </button>
                         </div>
+                        <div class="mt-3 flex items-center justify-between">
+                          <p id="resultCount" class="ml-5 text-sm text-neutral-600"></p>
+                          <a id="resetFilters" href="#" class="text-green-700 underline text-sm hover:text-green-900">
+                            Réinitialiser les filtres
+                          </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+  
+<section class="flex flex-wrap mx-0 p-6 bg-gray-100">
+    <div id="test_db" class="flex flex-wrap mx-3 w-full h-[50vh]"></div>
+</section>
 
+<section>
+    <div id="pagination" class="flex justify-center space-x-2 mb-10 bg-gray-100"></div>
+</section>
+  
         <section class="bg-gray-50 py-8 lg:py-12">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div id="test_db" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 min-h-[50vh]">
