@@ -2,6 +2,7 @@ const testDb = document.getElementById("test_db");
 const researchAnimalSelection = document.getElementById('researchAnimalSelection');
 const researchInput = document.getElementById('researchInput');
 const researchButton = document.getElementById("researchButton");
+const pagination = document.getElementById("pagination");
 let currentPage = 1; // on démarre à la page 1
 const cardPerPage = 8; // nombre d'élements max à afficher par page
 let currentData = []; // vide pour l'instant mais va récupérer la db
@@ -18,6 +19,7 @@ document.getElementById("resetFilters").addEventListener("click", (e) => {
   testDb.className = "flex flex-wrap mx-3 w-full"
 
   testDb.innerHTML = '';
+  pagination.innerHTML= "";
   document.getElementById("resultCount").textContent = '';
 
   inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase();
@@ -162,8 +164,6 @@ function creationCards(database){
 }
 
 function createPagination() {
-  const pagination = document.getElementById("pagination");
-  pagination.innerHTML = "";
 
   const totalPages = Math.ceil(currentData.length / cardPerPage); // rends l'entier le plus proche
 
