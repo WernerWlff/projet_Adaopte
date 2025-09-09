@@ -11,6 +11,7 @@ researchButton.addEventListener("click", () => {
   testDb.className = "flex flex-wrap mx-3 w-full"
 
   testDb.innerHTML = '';
+  document.getElementById("resultCount").textContent = '';
 
   inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase();
   
@@ -26,28 +27,32 @@ researchButton.addEventListener("click", () => {
         // type et city demandés
         if(selectValue !== "Tous" && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}' AND city='${inputValue}';`);
-          console.log(res[0].values.length)
+          document.getElementById("resultCount").textContent =
+          res[0].values.length + " animaux trouvés";
           creationCards(res);
         }
 
         //type demandé et pas city
         else if(selectValue !=='Tous' && inputValue === ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}';`);
-          console.log(res[0].values.length)
+          document.getElementById("resultCount").textContent =
+          res[0].values.length + " animaux trouvés";
           creationCards(res);
         }
 
         //type non demandé et city demandée
         else if(selectValue ==='Tous' && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE city='${inputValue}';`);
-          console.log(res[0].values.length)
+          document.getElementById("resultCount").textContent =
+          res[0].values.length + " animaux trouvés";
           creationCards(res);
-        }
+        }  
 
         // type et city non demandé 
         else{
           res = db.exec("SELECT * FROM animal;");
-          console.log(res[0].values.length)
+          document.getElementById("resultCount").textContent =
+          res[0].values.length + " animaux trouvés";
           creationCards(res);
         }
       })
