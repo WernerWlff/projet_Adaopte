@@ -11,9 +11,14 @@ researchButton.addEventListener("click", () => {
   let inputValue = researchInput.value;
   let res;
 
+document.getElementById("resetFilters").addEventListener("click", (e) => {
+  location.reload();    
+});
+
   testDb.className = "flex flex-wrap mx-3 w-full"
 
   testDb.innerHTML = '';
+  document.getElementById("resultCount").textContent = '';
 
   inputValue = inputValue.charAt(0).toUpperCase() + inputValue.slice(1).toLowerCase();
   
@@ -29,24 +34,33 @@ researchButton.addEventListener("click", () => {
         // type et city demandés
         if(selectValue !== "Tous" && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}' AND city='${inputValue}';`);
+          document.getElementById("resultCount").textContent =
+          res[0].values.length + " animaux trouvés";
           creationCards(res[0].values);
         }
 
         //type demandé et pas city
         else if(selectValue !=='Tous' && inputValue === ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}';`);
+          document.getElementById("resultCount").textContent =
+          res[0].values.length + " animaux trouvés";
           creationCards(res[0].values);
+
         }
 
         //type non demandé et city demandée
         else if(selectValue ==='Tous' && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE city='${inputValue}';`);
+          document.getElementById("resultCount").textContent =
+          res[0].values.length + " animaux trouvés";
           creationCards(res[0].values);
         }
 
         // type et city non demandé 
         else{
           res = db.exec("SELECT * FROM animal;");
+          document.getElementById("resultCount").textContent =
+          res[0].values.length + " animaux trouvés";
           creationCards(res[0].values);
         }
       })
