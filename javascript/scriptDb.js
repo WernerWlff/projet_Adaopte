@@ -2,6 +2,9 @@ const testDb = document.getElementById("test_db");
 const researchAnimalSelection = document.getElementById('researchAnimalSelection');
 const researchInput = document.getElementById('researchInput');
 const researchButton = document.getElementById("researchButton");
+let currentPage = 1; // on démarre à la page 1
+const cardPerPage = 8; // nombre d'élements max à afficher par page
+let currentData = []; // vide pour l'instant mais va récupérer la db
 
 researchButton.addEventListener("click", () => {
   let selectValue = researchAnimalSelection.value;
@@ -31,37 +34,34 @@ document.getElementById("resetFilters").addEventListener("click", (e) => {
         // type et city demandés
         if(selectValue !== "Tous" && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}' AND city='${inputValue}';`);
-          console.log(res[0].values.length)
           document.getElementById("resultCount").textContent =
           res[0].values.length + " animaux trouvés";
-          creationCards(res);
+          creationCards(res[0].values);
         }
 
         //type demandé et pas city
         else if(selectValue !=='Tous' && inputValue === ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}';`);
-          console.log(res[0].values.length)
           document.getElementById("resultCount").textContent =
           res[0].values.length + " animaux trouvés";
-          creationCards(res);
+          creationCards(res[0].values);
+
         }
 
         //type non demandé et city demandée
         else if(selectValue ==='Tous' && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE city='${inputValue}';`);
-          console.log(res[0].values.length)
           document.getElementById("resultCount").textContent =
           res[0].values.length + " animaux trouvés";
-          creationCards(res);
-        }  
+          creationCards(res[0].values);
+        }
 
         // type et city non demandé 
         else{
           res = db.exec("SELECT * FROM animal;");
-          console.log(res[0].values.length)
           document.getElementById("resultCount").textContent =
           res[0].values.length + " animaux trouvés";
-          creationCards(res);
+          creationCards(res[0].values);
         }
       })
       .catch(error => {
@@ -76,9 +76,13 @@ document.getElementById("resetFilters").addEventListener("click", (e) => {
 
 function creationCards(database){
   testDb.innerHTML = "" // pour vider l'affichage
+  currentData = database // pour récupérer le tableau de données
 
-        for(let i = 0; i < Math.min(database[0].values.length, 8); i++) {
-        const value = database[0].values[i];
+  const minPage = (currentPage - 1) * cardPerPage;
+  const maxPage = Math.min(minPage + cardPerPage, currentData.length)
+  
+        for(let i = minPage ; i < maxPage; i++) {
+        const value = database[i];
 
         // Création du container
         const container = document.createElement("div");
@@ -128,8 +132,14 @@ function creationCards(database){
           
         // Bouton
         const meetUpButton = document.createElement("button");
-        meetUpButton.className = 'bg-gray-900 w-1/4 text-white text-xs font-medium py-2 p-px mt-2 rounded-full hover:bg-gray-800 transition';
+        meetUpButton.className = 'bg-gray-900 w-1/4 text-white text-xs font-medium py-2 p-px mt-2 rounded-full hover:bg-gray-800 transition cursor-pointer';
         meetUpButton.textContent = "Rencontrer";
+        
+        meetUpButton.addEventListener('click', () => {
+          console.log("Voici les informations de l'animal :")
+          console.log(cardType.textContent);
+          console.log(cardName.textContent);
+        })
 
         textArea.appendChild(cardType);
         textArea.appendChild(cardName);
@@ -146,5 +156,62 @@ function creationCards(database){
         container.appendChild(card);
 
         testDb.appendChild(container);
+
+        createPagination();
       }
+}
+
+function createPagination() {
+  const pagination = document.getElementById("pagination");
+  pagination.innerHTML = "";
+
+  const totalPages = Math.ceil(currentData.length / cardPerPage); // rends l'entier le plus proche
+
+  // Bouton Précédent
+  if (currentPage > 1) {
+    const previousButton = document.createElement("button");
+    previousButton.textContent = "« Précédent";
+    previousButton.className = "px-3 py-1 border border-gray-300 rounded bg-white text-orange-500 hover:bg-orange-100 transition";
+    previousButton.addEventListener('click', () => {
+      currentPage--;
+      creationCards(currentData);
+      window.scrollTo({top: 0, behavior : 'smooth'});
+    });
+
+    pagination.appendChild(previousButton);
+  }
+
+  // Boucles sur toutes les pages
+  for (let i = 1; i <= totalPages; i++) {
+    const pageButton = document.createElement("button");
+    pageButton.textContent = i;
+    pageButton.className = "px-3 py-1 border border-gray-300 rounded bg-white text-orange-500 hover:bg-gray-100 transition";
+    
+    if (i === currentPage) {
+      pageButton.className ="px-3 py-1 border border-orange-500 rounded bg-orange-500 text-white font-bold";
+    }
+
+    pageButton.addEventListener('click', () => {
+      currentPage = i;
+      creationCards(currentData);
+      window.scrollTo({top: 0, behavior : 'smooth'});
+    });
+
+    pagination.appendChild(pageButton);
+  }
+
+  // Bouton Suivant
+  if (currentPage < totalPages) {
+    const nextButton = document.createElement("button");
+    nextButton.textContent = "Suivant »";
+    nextButton.className = "px-3 py-1 border border-gray-300 rounded bg-white text-orange-500 hover:bg-orange-100 transition";
+
+    nextButton.addEventListener('click', () => {
+      currentPage++;
+      creationCards(currentData);
+      window.scrollTo({top: 0, behavior : 'smooth'});
+    });
+
+    pagination.appendChild(nextButton);
+  }
 }
