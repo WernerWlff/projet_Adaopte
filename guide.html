@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adaopte</title>
+
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.6.2/sql-wasm.js"></script>
+    <script defer src="./javascript/scriptDb.js"></script>
+</head>
+<body class="font-roboto pb-16 lg:pb-0"> 
+
+   <a href="#contenu" class="skiplink sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-stone-50/90 text-black px-4 py-2 rounded z-50">Aller au contenu</a> 
+  
+    <header class="sticky top-0 z-40 bg-stone-50/90 backdrop-blur border-b border-stone-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                
+                <a id="logo" href="homepage.html" class="flex items-center gap-2 font-semibold text-neutral-900">
+                    <img src="assets/favicon/pattes.png" alt="" width="32" height="32" class="block" />
+                    <span class="text-2xl sm:text-3xl font-amatic">Ada<span class="text-(--secondary-color)">opte</span></span>
+                </a>
+
+                <nav aria-label="Navigation principale" class="hidden lg:block">
+                    <ul class="flex items-center gap-6 xl:gap-8 text-neutral-800">
+                        <li>
+                            <a href="homepage.html" aria-current="page"
+                            class="inline-flex items-center gap-2 px-3 py-2 hover:bg-neutral-200 focus-visible:outline focus-visible:outline-offset-2 rounded transition-colors">
+                                <img src="assets/navbar_icons/house.svg" alt="" aria-hidden="true" class="w-4 h-4" />
+                                <span class="text-base font-medium">Accueil</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="adoption_page.html"
+                            class="inline-flex items-center gap-2 px-3 py-2 hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded transition-colors">
+                                <img src="assets/navbar_icons/bone.svg" alt="" aria-hidden="true" class="w-4 h-4" />
+                                <span class="text-base font-medium">J'adopte</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="guide.html"
+                            class="inline-flex items-center gap-2 px-3 py-2 hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded transition-colors">
+                                <img src="assets/navbar_icons/fish.svg" alt="" aria-hidden="true" class="w-4 h-4" />
+                                <span class="text-base font-medium">Guide de l'adoption</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="volunteer_form.html"
+                            class="inline-flex items-center gap-2 px-3 py-2 hover:bg-neutral-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 rounded transition-colors">
+                                <img src="assets/navbar_icons/squirrel.svg" alt="" aria-hidden="true" class="w-4 h-4" />
+                                <span class="text-base font-medium">Bénévole</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <button type="button" class="sm:inline-flex items-center gap-2 rounded-full bg-[#F05A3E] text-white px-4 lg:px-6 py-2 font-medium shadow-md hover:opacity-95 active:opacity-90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 transition-opacity cursor-pointer">
+                        <span class="text-sm lg:text-base">Faire un don 🫶</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-(--primary-color) border-t border-gray-200 shadow-lg">
+        <div class="grid grid-cols-4 h-16">
+            <a href="homepage.html" class="flex flex-col items-center justify-center py-2 text-(--secondary-color)">
+                <img src="assets/navbar_icons/house.svg" alt="" class="w-5 h-5 mb-1">
+                <span class="text-xs font-medium">Accueil</span>
+            </a>
+            <a href="adoption_page.html" class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-(--secondary-color) transition-colors">
+                <img src="assets/navbar_icons/bone.svg" alt="" class="w-5 h-5 mb-1">
+                <span class="text-xs font-medium">J'adopte</span>
+            </a>
+            <a href="guide.html" class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-(--secondary-color) transition-colors">
+                <img src="assets/navbar_icons/fish.svg" alt="" class="w-5 h-5 mb-1">
+                <span class="text-xs font-medium">Guide de l'adoption</span>
+            </a>
+            <a href="volunteer_form.html" class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-(--secondary-color) transition-colors">
+                <img src="assets/navbar_icons/squirrel.svg" alt="" class="w-5 h-5 mb-1">
+                <span class="text-xs font-medium">Bénévole</span>
+            </a>
+        </div>
+    </nav>
+
+    <section>
+        <p class="Amatic text-8xl mt-10 mb-10 text-center">Site Web en construction, revenez plus tard</p>
+        <img src="assets/wip/software-maintenance-definition.jpg" alt="Site en construction"/>
+    </section>
+
+    <footer class="bg-(--dark-color) py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+
+                <div class="space-y-4 lg:col-span-1">
+                    <h4 class="text-3xl lg:text-4xl text-(--secondary-color) font-bold mb-3 Amatic">Adaopte</h4>
+                    <p class="text-sm leading-relaxed text-white max-w-sm">
+                        Notre mission est de trouver des foyers aimants pour chaque animal abandonné et de promouvoir le bien-être animal.
+                    </p>
+                    <div class="flex gap-3 mt-6">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-700 hover:bg-neutral-600 transition-colors cursor-pointer">
+                            <img src="assets/socials_links_logo/facebook.svg" alt="Facebook" class="w-5 h-5">
+                        </div>
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-700 hover:bg-neutral-600 transition-colors cursor-pointer">
+                            <img src="assets/socials_links_logo/instagram.svg" alt="Instagram" class="w-5 h-5">
+                        </div>
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-700 hover:bg-neutral-600 transition-colors cursor-pointer">
+                            <img src="assets/socials_links_logo/linkedin.svg" alt="LinkedIn" class="w-5 h-5">
+                        </div>
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full bg-neutral-700 hover:bg-neutral-600 transition-colors cursor-pointer">
+                            <img src="assets/socials_links_logo/twitch.svg" alt="Twitch" class="w-5 h-5">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-2xl lg:text-3xl text-(--secondary-color) font-bold mb-4 Amatic">Informations utiles</h3>
+                    <div class="space-y-3">
+                        <a href="#" class="block text-sm text-gray-400 hover:text-white transition-colors">FAQs</a>
+                        <a href="#" class="block text-sm text-gray-400 hover:text-white transition-colors">Conseils d'adoption</a>
+                        <a href="#" class="block text-sm text-gray-400 hover:text-white transition-colors">Nous contacter</a>
+                        <a href="#" class="block text-sm text-gray-400 hover:text-white transition-colors">Mentions légales</a>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="text-2xl lg:text-3xl text-(--secondary-color) font-bold mb-4 Amatic">Contact</h3>
+                    <div class="space-y-2 text-sm text-white">
+                        <p>116 Rue du Faubourg Saint-Martin</p>
+                        <p>75010 Paris, France</p>
+                        <p>Email: contact@adaopte.fr</p>
+                        <p>Tél: +33 1 23 45 67 89</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="border-gray-600 mt-8 mb-6">
+            <div class="text-center space-y-1">
+                <p class="text-gray-500 text-xs">© 2025 Adaopte. Tous droits réservés.</p>
+                <p class="text-gray-500 text-xs">Ce site a été développé dans le cadre d'un projet pour ADA Tech School.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
