@@ -118,8 +118,14 @@ function creationCards(database){
           
         // Bouton
         const meetUpButton = document.createElement("button");
-        meetUpButton.className = 'bg-gray-900 w-1/4 text-white text-xs font-medium py-2 p-px mt-2 rounded-full hover:bg-gray-800 transition';
+        meetUpButton.className = 'bg-gray-900 w-1/4 text-white text-xs font-medium py-2 p-px mt-2 rounded-full hover:bg-gray-800 transition cursor-pointer';
         meetUpButton.textContent = "Rencontrer";
+        
+        meetUpButton.addEventListener('click', () => {
+          console.log("Voici les informations de l'animal :")
+          console.log(cardType.textContent);
+          console.log(cardName.textContent);
+        })
 
         textArea.appendChild(cardType);
         textArea.appendChild(cardName);
