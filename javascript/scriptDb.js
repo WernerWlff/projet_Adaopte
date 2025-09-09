@@ -36,34 +36,53 @@ document.getElementById("resetFilters").addEventListener("click", (e) => {
         // type et city demandés
         if(selectValue !== "Tous" && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}' AND city='${inputValue}';`);
+          if(!res.length || !res[0] || !res[0].values.length){
+            document.getElementById('resultCount').textContent = "Aucun animal trouvé"
+          }
+          else{
           document.getElementById("resultCount").textContent =
           res[0].values.length + " animaux trouvés";
           creationCards(res[0].values);
+          }
         }
 
         //type demandé et pas city
         else if(selectValue !=='Tous' && inputValue === ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}';`);
+          if(!res.length || !res[0] || !res[0].values.length){
+            document.getElementById('resultCount').textContent = "Aucun animal trouvé"
+          }
+          else{
           document.getElementById("resultCount").textContent =
           res[0].values.length + " animaux trouvés";
           creationCards(res[0].values);
-
+          }
         }
 
         //type non demandé et city demandée
         else if(selectValue ==='Tous' && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE city='${inputValue}';`);
+          if(!res.length || !res[0] || !res[0].values.length){
+            document.getElementById('resultCount').textContent = "Aucun animal trouvé"
+          }
+          else{
           document.getElementById("resultCount").textContent =
           res[0].values.length + " animaux trouvés";
           creationCards(res[0].values);
+          }
         }
 
         // type et city non demandé 
         else{
           res = db.exec("SELECT * FROM animal;");
+          if(!res.length || !res[0] || !res[0].values.length){
+            document.getElementById('resultCount').textContent = "Aucun animal trouvé"
+          }
+          else{
           document.getElementById("resultCount").textContent =
           res[0].values.length + " animaux trouvés";
           creationCards(res[0].values);
+          }
         }
       })
       .catch(error => {
