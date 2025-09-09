@@ -69,38 +69,87 @@
         </div>
     </header>
   
-<main id="contenu" tabindex="-1">
+    <main id="contenu" tabindex="-1" class="min-h-screen">
+        
+        <section class="bg-white py-6 lg:py-12">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white border-none shadow-lg rounded-xl p-6 lg:p-8">
+                    
+                    <div class="hidden md:grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                        <label for="researchAnimalSelection" class="text-sm font-medium text-gray-700">Type d'animal</label>
+                        <label for="researchInput" class="text-sm font-medium text-gray-700">Localisation</label>
+                        <div></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="space-y-2">
+                            <label for="researchAnimalSelection" class="block text-sm font-medium text-gray-700 md:hidden">Type d'animal</label>
+                            <select id="researchAnimalSelection" class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500 bg-white">
+                                <option value="Tous">Tous les animaux</option>
+                                <option value="Chien">Chien</option>
+                                <option value="Chat">Chat</option>
+                                <option value="Lapin">Lapin</option>
+                                <option value="Rongeur">Rongeur</option>
+                            </select>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <label for="researchInput" class="block text-sm font-medium text-gray-700 md:hidden">Localisation</label>
+                            <input id="researchInput" type="text" placeholder="Votre ville" 
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-orange-500 focus:border-orange-500">
+                        </div>
+                        
+                        <div class="flex items-end">
+                            <button id="researchButton" class="w-full h-10 bg-gray-800 text-white rounded-lg font-semibold hover:bg-gray-700 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors">
+                                Rechercher 🔎
+                            </button>
+                        </div>
+                    </div>
 
-<div class="border-none shadow-lg rounded-lg mx-90 my-8 w-[800px] p-8" style="box-shadow: var(--shadow-lg); border-radius: var(--border-radius)">
-    <div class="grid grid-cols-3 gap-4 mb-2">
-        <label for="researchAnimalSelection" class="block ml-5">Type d'animal</label>
-        <label for="researchInput" class="block">Localisation</label>
-        <label class="block"></label>
-    </div>
-    <div class="grid grid-cols-3 gap-4">
-        <select id="researchAnimalSelection" class="border ml-5 w-50 rounded-sm" style="box-shadow: var(--shadow-sm)">
-            <option value="Tous">Tous les animaux</option>
-            <option value="Chien">Chien</option>
-            <option value="Chat">Chat</option>
-            <option value="Lapin">Lapin</option>
-            <option value="Rongeur">Rongeur</option>
-        </select>
-        <input id="researchInput" type="text" placeholder="   Votre ville" class="border shadow-(--shadow-sm) w-60 rounded-sm">
-        <button id="researchButton"  class="w-50 h-10 border rounded-full text-center" style="background: var(--dark-color); color: var(--primary-color)"><strong>Rechercher 🔎</strong></button>
-        <!-- LIGNE COMPTEUR -->
-        <p id="resultCount" class="ml-5 mt-2 text-sm text-neutral-600"></p>
-</div>
-    
-    </div>
-</div>
+                    <div class="mt-3 flex items-center justify-between">
+                        <p id="resultCount" class="ml-5 text-sm text-neutral-600">
+                        </p>
 
-<section class="flex flex-wrap mx-0 p-6 bg-gray-100">
-    <div id="test_db" class="flex flex-wrap mx-3 w-full h-[50vh]"></div>
-</section>
-    
-    <footer class="bg-(--dark-color) text-(--primary-color) Roboto py-8 px-6 w-full">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                        <a id="resetFilters" href="#" class="text-green-700 underline text-sm hover:text-green-900">
+                        Réinitialiser les filtres
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gray-50 py-8 lg:py-12">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div id="test_db" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 min-h-[50vh]">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="lg:hidden fixed bottom-0 left-0 right-0 z-50 bg-(--primary-color) border-t border-gray-200 shadow-lg">
+        <div class="grid grid-cols-4 h-16">
+            <a href="homepage.html" class="flex flex-col items-center justify-center py-2 text-(--secondary-color)">
+                <img src="assets/navbar_icons/house.svg" alt="" class="w-5 h-5 mb-1">
+                <span class="text-xs font-medium">Accueil</span>
+            </a>
+            <a href="adoption_page.html" class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-(--secondary-color) transition-colors">
+                <img src="assets/navbar_icons/bone.svg" alt="" class="w-5 h-5 mb-1">
+                <span class="text-xs font-medium">J'adopte</span>
+            </a>
+            <a href="guide.html" class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-(--secondary-color) transition-colors">
+                <img src="assets/navbar_icons/fish.svg" alt="" class="w-5 h-5 mb-1">
+                <span class="text-xs font-medium">Guide de l'adoption</span>
+            </a>
+            <a href="volunteer_form.html" class="flex flex-col items-center justify-center py-2 text-gray-600 hover:text-(--secondary-color) transition-colors">
+                <img src="assets/navbar_icons/squirrel.svg" alt="" class="w-5 h-5 mb-1">
+                <span class="text-xs font-medium">Bénévole</span>
+            </a>
+        </div>
+    </nav>
+
+    <footer class="bg-(--dark-color) py-12">
+        <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
 
                 <div class="space-y-4">
                     <h4 class="text-3xl text-(--secondary-color) Amatic font-bold mb-3">Adaopte</h4>

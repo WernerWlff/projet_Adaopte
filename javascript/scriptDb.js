@@ -8,6 +8,10 @@ researchButton.addEventListener("click", () => {
   let inputValue = researchInput.value;
   let res;
 
+document.getElementById("resetFilters").addEventListener("click", (e) => {
+  location.reload();    
+});
+
   testDb.className = "flex flex-wrap mx-3 w-full"
 
   testDb.innerHTML = '';
@@ -27,6 +31,7 @@ researchButton.addEventListener("click", () => {
         // type et city demandés
         if(selectValue !== "Tous" && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}' AND city='${inputValue}';`);
+          console.log(res[0].values.length)
           document.getElementById("resultCount").textContent =
           res[0].values.length + " animaux trouvés";
           creationCards(res);
@@ -35,6 +40,7 @@ researchButton.addEventListener("click", () => {
         //type demandé et pas city
         else if(selectValue !=='Tous' && inputValue === ''){
           res = db.exec(`SELECT * FROM animal WHERE type='${selectValue}';`);
+          console.log(res[0].values.length)
           document.getElementById("resultCount").textContent =
           res[0].values.length + " animaux trouvés";
           creationCards(res);
@@ -43,6 +49,7 @@ researchButton.addEventListener("click", () => {
         //type non demandé et city demandée
         else if(selectValue ==='Tous' && inputValue !== ''){
           res = db.exec(`SELECT * FROM animal WHERE city='${inputValue}';`);
+          console.log(res[0].values.length)
           document.getElementById("resultCount").textContent =
           res[0].values.length + " animaux trouvés";
           creationCards(res);
@@ -51,6 +58,7 @@ researchButton.addEventListener("click", () => {
         // type et city non demandé 
         else{
           res = db.exec("SELECT * FROM animal;");
+          console.log(res[0].values.length)
           document.getElementById("resultCount").textContent =
           res[0].values.length + " animaux trouvés";
           creationCards(res);
