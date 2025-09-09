@@ -183,7 +183,7 @@ function creationCards(database){
 }
 
 function createPagination() {
-
+  pagination.innerHTML=''
   const totalPages = Math.ceil(currentData.length / cardPerPage); // rends l'entier le plus proche
 
   // Bouton Précédent
