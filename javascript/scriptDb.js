@@ -100,6 +100,11 @@ document.getElementById("resetFilters").addEventListener("click", (e) => {
       })
       .catch(error => {
       console.error("Erreur lors de la récupération de la base de données :", error);
+      cardsDb.innerHTML = `<p class=" text-3xl text-center Roboto text-black">
+                            Désolé, il y a eu une erreur dans la récupération de la base de donnée, veuillez réessayer ultérieurement
+                          </p>
+                          <img class="mx-auto mt-4" src="/assets/images/yosei-g-OVgE3m4MHKM-unsplash.jpg" alt="biscuit est désolé que ça ne fonctionne pas"/>`
+      
     })
     .catch(error => {
     console.error("Erreur lors de l'initialisation de SQL.js :", error);
