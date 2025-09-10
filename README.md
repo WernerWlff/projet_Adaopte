@@ -29,6 +29,7 @@ _A voir si on refait l'architecture pour séparer tout nos fichiers dans des dos
 - `javascript/` : scripts JavaScript
 - `assets/` : images et ressources visuelles
 - `animal.sql` : script de création et d’initialisation de la base de données
+- `animal.db` : base de donnée qui sert à la création de nos cartes
 
 
 ## Aperçu
