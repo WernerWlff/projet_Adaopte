@@ -8,6 +8,7 @@ const cardPerPage = 8;
 let currentData = [];
 
 researchButton.addEventListener("click", () => {
+  currentPage = 1;
   let selectValue = researchAnimalSelection.value;
   let inputValue = researchInput.value;
   let res;
