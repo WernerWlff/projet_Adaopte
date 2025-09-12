@@ -18,9 +18,6 @@ Les objectifs principaux étant de :
 - **SQL.js** : Utilisation de la base donnée dans un environnement Javascript sans utiliser de Backend
 
 ## Architecture du projet
-
-_A voir si on refait l'architecture pour séparer tout nos fichiers dans des dossiers séparés ( bonne pratique ? ) --> mettre nos fichiers html dans un dossier séparé et peut être créer plusieurs fichiers sql pour nos différentes bases de données même si on ne se sert que d'une seule ?_
-
 - `homepage.html` : page d’accueil
 - `adoption_page.html` : page listant les animaux à adopter
 - `guide.html` : page en cours de construction
